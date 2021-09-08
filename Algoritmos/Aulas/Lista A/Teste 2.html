@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exer18</title>
+</head>
+<body>
+    
+    <h4>Exer 18</h4>
+
+<span id="span_times" style="display: none;">
+<img onclick="corinthians()" src="corinthians.png" alt="corinthians" style="height: 100px;">
+<img onclick="palmeiras()" src="palmeiras.png" alt="palmeiras" style="height: 100px;">
+<img onclick="paulo()" src="paulo.jpeg" alt="saoPaulo" style="height: 100px;">
+<img onclick="santos()"  src="santos.png" alt="santos" style="height: 100px;"> <br>
+</span>
+
+<button id="but_esconder" onclick="esconder()" style="display: none;" >Esconder escudos</button>
+<button id="but_mostrar" onclick="mostrar()" style="display: block;" >Mostrar escudos</button>
+
+<div id="ver" ></div>
+
+</body>
+<script>
+    function santos(){
+        ver.innerHTML = '<img src="taca.jpeg" alt="" style="height: 100px;"><img src="taca.jpeg" alt="" style="height: 100px;">';
+
+    }
+
+    function paulo(){
+        ver.innerHTML = '<img src="taca.jpeg" alt="" style="height: 100px;"><img src="taca.jpeg" alt="" style="height: 100px;"><img src="taca.jpeg" alt="" style="height: 100px;">';
+
+    }
+
+    function palmeiras(){
+        ver.innerHTML = '<img src="" alt="" style="height: 100px;">';
+
+    }
+
+    function corinthians(){
+        ver.innerHTML = '<img src="taca.jpeg" alt="" style="height: 100px;"><img src="taca.jpeg" alt="" style="height: 100px;">';
+
+    }
+    
+
+    function mostrar() {
+        span_times.style.display = "block";
+        but_mostrar.style.display = 'none';
+        but_esconder.style.display = 'block';
+    }
+
+    function esconder() {      
+        span_times.style.display = "none";
+        but_mostrar.style.display = 'block';
+        but_esconder.style.display = 'none';
+    }
+    
+</script>
+
+</body>

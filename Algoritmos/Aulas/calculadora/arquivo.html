@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="arquivo.css" rel="stylesheet">
+    <title>Vagakey - calculadora</title>
+</head>
+
+<body>
+
+    <div class="body-cal"> <br>
+        <div id="div_inicio">
+            <b style="color: white; margin:2em ;">Preencha os dados a seguir:</b> <br><br><br>
+
+            <div style="text-align: left; margin:2em; color: white;">
+                Quantidade de vagas:
+                <input id="inp_vagas" type="text" placeholder="0000" size="05" autofocus>
+                <div class="help">
+                    <div class="question"><b style="color: #2B0152;">?</b></div>
+                    <div class="popup">
+                        <b>Informe a quantidade de vagas que tem em seu estacionamento.</b>
+                    </div>
+                </div>
+                <br><br>
+
+                Gastos mensal:
+                <input id="inp_gto_mensal" type="text" placeholder="0000" size="05" autofocus>
+                <div class="help">
+                    <div class="question"><b style="color: #2B0152;">?</b></div>
+                    <div class="popup">
+                        <b>Inclui os gastos: água, luz, manutenção e etc.</b>
+                    </div>
+                </div>
+                <br><br>
+
+                Faturamento mensal:
+                <input id="inp_fto_mensal" type="text" placeholder="0000" size="05" autofocus>
+                <div class="help">
+                    <div class="question"><b style="color: #2B0152;">?</b></div>
+                    <div class="popup">
+                        <b>O quanto fatura em um mês, para nós ajudar a fazer uma conta rápida.</b>
+                    </div>
+                </div>
+                <br><br>
+
+                Investimento:
+                <input id="inp_invest" type="text" placeholder="0000" size="05" autofocus>
+                <div class="help">
+                    <div class="question"><b style="color: #2B0152;">?</b></div>
+                    <div class="popup">
+                        <b>O quanto você investiu no inicio.</b>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+            <button onclick="btn_calculos ()" class="btn btn1">Calcular</button>
+        </div>
+        <div id="div_msg" style="display: none; color: white; margin:2em ;  font-size: 20px;">
+            Seu resultado ficou como: <br><br>
+
+            Em seu estacionamento reside <br>
+            <b id="div_qts_vg"></b> vagas <br>
+            Sua empresa fatura em um ano <br>
+            R$ <i id="div_ftr"></i> <br>
+            E o seu lucro é de R$ <i id="div_lcr"></i><br>
+            E por ano seu lucro ficará <br>
+            R$ <b id="div_lcr_ano"></b> <br><br>
+            Em <b id="div_inv"></b> meses poderá combrir o valor do investimento inicial. <br>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    function btn_calculos() {
+        var lucro = `${inp_fto_mensal.value - inp_gto_mensal.value}`
+        var anoLu = `${lucro * 12}`
+        var anoEm = `${inp_fto_mensal.value * 12}`
+        var invs = `${inp_invest.value / lucro}`
+
+        div_qts_vg.innerHTML = inp_vagas.value;
+        div_ftr.innerHTML = anoEm;
+        div_lcr.innerHTML = lucro;
+        div_lcr_ano.innerHTML = anoLu;
+        div_inv.innerHTML = invs;
+
+        div_inicio.innerHTML = '';
+        div_msg.style.display = 'block';
+    }
+
+</script>

@@ -1,0 +1,63 @@
+.body-cal {
+    margin: 10% auto;
+    box-shadow: 0 0 2em #2B0152;
+    align-items: center;
+    font-family: ubuntu;
+    background-image: linear-gradient(to bottom right, #8400FF, #EB00FF); 
+    width: 400px; 
+    height: 450px;
+  }
+  
+  .help {
+    width: 40px;
+    margin: ;
+  }
+  
+  .help .question {
+    border: none;
+    height: 10px;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+   
+  }
+  
+  .help .popup, .help .popup2 {
+    border: none;
+    width: 200px;
+    height: 0px;
+    text-align: left;
+    position: relative;
+    background-color: #b7eee0;
+    opacity: 0;
+    transition: 1s;
+  }
+  
+  
+  .help:hover .popup {
+    opacity: 1;
+    height: 50px;
+  }
+
+  .btn {
+    background-color: #12D6DF; 
+    border: none;
+    color: #2B0152;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin:2em;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+  }
+  
+  .btn1:hover {
+    box-shadow: 0 12px 16px 0 rgba(95, 3, 104, 0.726),0 17px 50px 0 #4d095071;
+  }
+
+  
+  

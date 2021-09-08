@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apagando Conteúdo</title>
+</head>
+
+<body>
+
+    <button onclick="frutas()">Frutas</button>
+    <button onclick="legumes()">Legumes</button>
+    <button onclick="carnes()">Carnes</button>
+    <button onclick="guloseimas()">Goloseimas</button>
+    <br><br>
+    <button onclick="apagar()">Limpar a Lista</button>
+    <br>
+    <div id="div_lista">
+        <h3>Lista de compras</h3>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function frutas() {
+        div_lista.innerHTML += "* Frutas <br>";
+    }
+    function legumes() {
+        div_lista.innerHTML += '* Legumes <br>';
+    }
+    function carnes() {
+        div_lista.innerHTML += '* Carnes <br>';
+    }
+    function guloseimas() {
+        div_lista.innerHTML += '* Goloseimas <br>';
+    }
+
+    //se usar um par de aspas simples ou dupla, sem nada detro, o corpo da tab some da página
+    function apagar() {
+        div_lista.innerHTML = '';
+    }
+</script>

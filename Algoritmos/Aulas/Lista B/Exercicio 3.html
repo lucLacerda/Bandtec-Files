@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+</head>
+<body>
+
+    Cidade Natal: <input id="cidade" type="text" placeholder="Ex: São Paulo">
+    <br>
+    Ano de Nascimento <input id="ano" type="text" placeholder="Ano de Nascimento">
+
+    <button onclick="incluir()" style="background: green; color: white;"> <b> Incluir </b> </button>
+
+    <div id="caixa"></div> 
+
+</body>
+    <script>
+        function incluir() {
+            caixa.innerHTML += 'Você nasceu na cidade de <b>' + cidade.value + '</b> em <b>' + ano.value + "</b><br>";
+        
+            cidade.value = '';
+            ano.value = '';
+        }
+    </script>
+</html>

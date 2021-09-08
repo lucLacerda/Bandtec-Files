@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esconde/Mostra com block</title>
+</head>
+
+<body>
+    <h2>Verdades secretas!</h2>
+    
+    <!-- 
+        Inicialmente o primeiro botão estará visível (display: block é o default)  
+        e o segundo estará escondido (display: none;)
+    -->
+    <button id="bt_mostrar" onclick="mostrar_verdade()">Ver uma verdade</button>
+    <button id="bt_esconder" onclick="esconder_verdade()" style="display: none;">Esconder uma verdade</button>
+    <br>
+    
+    <div id="div_verdade" style="display: none;">
+        Você é escravo do que fala e senhor do que cala
+    </div>
+</body>
+</html>
+
+<script>
+
+    function mostrar_verdade() {
+        // fazendo um elemento ficar visível com style.display='block'
+        div_verdade.style.display='block';
+        bt_esconder.style.display='block';
+
+        // ocultando o botão "ver uma verdade"
+        bt_mostrar.style.display='none';
+    }
+
+    function esconder_verdade() {
+        // fazendo um elemento ficar invisível com style.display='none'
+        div_verdade.style.display='none';
+        bt_esconder.style.display='none';
+
+        // mostrando o botão "ver uma verdade"
+        bt_mostrar.style.display='block';
+    }
+</script>

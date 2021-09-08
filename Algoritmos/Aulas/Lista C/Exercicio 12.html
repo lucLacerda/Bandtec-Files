@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 12 </title>
+</head>
+<body>
+    <div> Valor Guardado no cofrinho: <span id="span_valor">R$ 0.00</span></div> 
+    <br>
+    <div>  Quantidade de depósitos feitos: <span id="span_depositos" >0</span> </div>
+    <br>
+    <div>  Quantidade de retiradas feitas: <span id="span_retiradas">0</span> </div>
+
+    R$<input id="primeiro_ipt" type="Number" placeholder="Ex: 7">
+
+    <button onclick="depositar()"> Depositar </button>
+
+    <button onclick="retirar()"> Tirar toda a grana </button>    
+    
+</body>
+    <script>
+        var banco = 0
+        var depositos = 0
+        var retiradas = 0
+
+        function depositar() {
+            var valor = Number(primeiro_ipt.value);
+            var soma = (banco + valor);
+            
+            span_valor.innerHTML = `R$${(soma).toFixed(2)}`;
+
+            banco = soma
+            depositos ++;
+            span_depositos.innerHTML = depositos;
+        }
+        function retirar() {
+            span_valor.innerHTML = `R$0.00`;   
+
+            retiradas ++;
+            span_retiradas.innerHTML = retiradas;
+        }
+    </script>
+</html>

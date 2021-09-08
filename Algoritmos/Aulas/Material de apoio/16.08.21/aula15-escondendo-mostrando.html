@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mostrar e esconder</title>
+</head>
+
+<body>
+
+    <h3>Esconde e mostra elementos</h3>
+
+    <!-- 
+        display: none; torna um elemento INVISÍVEL 
+        display: block; torna um elemento VISÍVEL
+    -->
+
+    Há segredos aqui! Cuidado! <br><br>
+
+    <button onclick="mostrar_segredo()">Ver o segredo</button>
+    <button onclick="esconder_segredo()">Esconder o segredo</button>
+
+    <br><br>
+    <span id="span_segredo" style="display: none;">
+        Você é senhor do que cala e escravo do que fala!
+    </span>
+
+</body>
+
+</html>
+
+<script>
+    /*  No Javascript podemos alterar a propriedade display do atributo style de
+       uma tag para encondê-la ou mostrá-la, para isso usamos o id da tag seguido 
+       de .style.display
+       OBS: o display='block' torna visível e faz o elemento quebrar de linha
+   */
+
+    function mostrar_segredo() {
+        span_segredo.style.display = 'block';
+    }
+
+    function esconder_segredo() {
+        span_segredo.style.display = 'none';
+    }
+</script>

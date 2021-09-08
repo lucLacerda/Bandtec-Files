@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    Era uma vez... 
+    <span id="span_historia"></span>
+
+    <br><br>
+    <button onclick="continuar()">Continuar</button> 
+    <button onclick="feliz()">Final feliz</button>
+</body>
+</html>
+<script>
+    /*
+    No Javascript podemos trabalhar com tags do HTML, para isso é necessário que essa
+    tag tenha um "id"
+
+    No JavasScript usamos o id da tag seguido de .innerHTML para manipular o conteúdo
+    do corpo dessa tag. Por exemplo, o id da nossa tag span é: span_historia, então vamos
+    usar: span_historia.innerHTML para manipular o seu corpo.
+
+    Para alterar o conteúdo do corpo da tag usamos o sinal = (igual)  Com ele vamos 
+    atribuir um novo valor para o corpo da tag. 
+    Primeiro eu escrevo o id da tag seguindo de .innerHTML, depois eu uso o sinal = (atribuição) 
+    depois eu passo o novo valor a ser atribuido. 
+    */
+
+    function continuar() {
+    // Nesta função é TROCADO o corpo da tag para a frase 'um lugarzinho no meio do nada!'
+        span_historia.innerHTML = 'um lugarzinho no meio do nada!';
+    }
+
+    function feliz() {
+    // Nesta função é TROCADO o corpo da tag para a frase 'e viveram felizes para sempre S2'
+    // #facaesperto - é possivel usar outras tags HTML no corpo de uma tag
+        span_historia.innerHTML = 'e viveram <b>felizes</b> para sempre S2';
+    }
+</script>

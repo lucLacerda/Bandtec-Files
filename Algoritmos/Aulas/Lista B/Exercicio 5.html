@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 5 B </title>
+</head>
+<body>
+
+     Valor da passagem <input id="primeiro_ipt" type="number" placeholder="Ex: 4,40">
+    <br>
+    Quantidade de viagens p/mês <input id="segundo_ipt" type="number" placeholder="Ex: 8">
+
+    <button onclick="calcular()" style="background: green; color: white;"> <b> Calcular VT </b> </button>
+
+    <div id="caixa"></div> 
+
+</body>    
+    <script>
+        function calcular() {
+            var multiplicacao = `${Number(primeiro_ipt.value) * Number(segundo_ipt.value)}`;
+
+            caixa.innerHTML += `Você vai gastar <u> R$${multiplicacao} </u> por mês com ônibus <br>`
+    
+            primeiro_ipt.value = '';
+            segundo_ipt.value = '';
+        }
+    </script>
+</html>

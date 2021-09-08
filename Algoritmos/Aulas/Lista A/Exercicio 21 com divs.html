@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 21 </title>
+</head>
+<body>
+
+<div style="background-color: black; height: 400px; width: 200px; border-radius: 50px;">
+    <br><br>    
+    <div onclick="vermelho()"; style="background-color: red; height: 100px; width: 100px; border-radius: 50px; float: left; margin-left: 50px;"></div>
+    
+    <div onclick="amarelo()"; style="background-color: yellow; height: 100px; width: 100px; border-radius: 50px; float: left; margin-left: 50px;"></div>
+    
+    <div onclick="verde()"; style="background-color: green; height: 100px; width: 100px; border-radius: 50px; float: left; margin-left: 50px;"></div>
+</div>
+<button onclick="recomecar()"; style="float: left; margin-left: 40px; font-size: 20px;"> Recomeçar </button>
+<br><br>    
+    <div id="algo"></div>
+
+</body>
+    <script>
+        function vermelho(){
+            algo.innerHTML = '<b style="background-color: red;color: white;"> Pare! Aguarde o verde! </b>'
+        }
+        function amarelo(){
+            algo.innerHTML = '<b style="background-color: orange;color: black;">Só siga se estiver perto e rápido. </b>'
+        }
+        function verde(){
+            algo.innerHTML = '<b style="background-color: green;color: white;"> Siga sorriso 😁</b>'
+        }
+        function recomecar(){
+            algo.innerHTML = ''
+        }
+
+    </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alterando style</title>
+</head>
+<body>
+
+    <!-- 
+        No Javascrip podemos alterar o style de uma tag, para isso informamos o 
+        nome da tag seguido de .style.xxxxx   onde xxxx é o estilo a ser alterado
+    -->
+    
+    <button onclick="vermelho()">Vermelho</button>
+    <button onclick="azul()">Azul</button>
+    <button onclick="verde()">Verde</button>
+    
+    <br><br>
+    <div id="div_texto">
+        Vamos mudar a cor deste texto???
+    </div>
+
+</body>
+</html>
+
+<script>
+function vermelho() {
+    div_texto.style.color='red';    
+    div_texto.style.backgroundColor='lightpink';
+}
+
+function verde() {
+    div_texto.style.color='green';   
+    div_texto.style.backgroundColor='lightgreen'; 
+}
+
+function azul() {
+    div_texto.style.color='lightblue';    
+    div_texto.style.backgroundColor='blue';
+}
+</script>

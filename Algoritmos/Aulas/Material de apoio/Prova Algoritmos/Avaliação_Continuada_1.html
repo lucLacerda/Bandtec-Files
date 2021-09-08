@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora de águas Pedeágua </title>
+</head>
+<body>
+    <h2>Distribuidora Pedeágua</h2>   
+
+    <h3>Orçamento de vendas</h3> 
+
+<div id="div_esconder">
+ <!--parte inicial-->   
+    <b>Água Natural</b>                     <br>
+Entre com o valor de venda:
+      <input id="a_valor" placeholder="00,00" autofocus size="06">  <br>
+
+Entre com a quantidade desejada: 
+      <input id="a_quantia" placeholder="0000" autofocus size="06"> <br><br>
+ 
+<b>Água com Gás</b>           <br>
+Entre com o valor de venda:
+     <input id="b_valor" placeholder="00,00" autofocus size="06"> <br>
+
+Entre com a quantidade desejada:
+<input id="b_quantia" placeholder="0000" autofocus size="06" > <br><br>
+
+<button onclick="resultado ()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0X2R_5A90Wgt1fwFrLamzsMVqwB3khmllHQ&usqp=CAU" alt="Clique aqui" width="40px"></button> <br>
+</div>
+<br>
+
+<!--div da mensagem-->
+<div id="div_total"></div>
+<br>
+
+<!--div da barra de processeso-->
+<div id="div_a"></div>
+<div id="progressa" style="background:#30c2ee;height:30px;width:0%">
+    </div> </div>
+
+<div id="div_b"></div>
+    <div id="progressb" style="background:rgb(58, 233, 58); height:30px; width:0%">
+        </div> </div>
+
+
+</body>
+</html>
+
+<script>
+
+    function resultado (){
+    ax_quantidades = Number(a_quantia.value) + Number(b_quantia.value);
+    ax_total = Number(a_valor.value) + Number(b_valor.value);
+     ax_avalor = a_quantia.value * a_valor.value;
+     ax_bvalor= b_quantia.value * b_quantia.value;
+         
+     div_total.innerHTML += `Análise Orçamentária:<br>
+Total de unidades deste orçamento: <b>${ax_quantidades}</b> <br>
+Água Natural – Quantidade solicitada <b style="color: #30c2ee;">${a_quantia.value}</b> Valor Total da água natural: <b style="color: #30c2ee;">R$ ${ax_avalor}</b><br>
+Água com Gás – Quantidade solicitada <b style="color: rgb(58, 233, 58);">${b_quantia.value}</b> Valor Total da água com gás:<b style="color: rgb(58, 233, 58);"> R$ ${ax_bvalor}</b><br><br>
+
+<i style="background-color: grey;">Valor total deste Orçamento:<b> R$ ${ax_total} </b></i><br><br>
+Neste orçamento a proporção do valor da <span style="background-color: #30c2ee;">Água Natural</span> em relação ao total foi de:<b style="color: #30c2ee;"> ${ax_avalor / 100}%</b> <br>
+Neste orçamento a proporção do valor da <span style="background-color: rgb(58, 233, 58);">Água com Gás</span> em relação ao total foi de:<b style="color: rgb(58, 233, 58);"> ${ax_bvalor / 100}%</b><br>
+A quantidade de Água Natural de<b style="color: #30c2ee;"> ${a_quantia.value / 100}% </b>em relação ao total e a Água com Gás é: <b style="color: rgb(58, 233, 58);">${b_quantia.value / 100}%</b><br><br>
+<img src="https://image.flaticon.com/icons/png/512/1286/1286786.png" alt="calculadora" width="60px"><br><br>`
+  
+        div_a.innerHTML +=`Água mineral`;
+        progressa.style.width = a_quantia.value / 100 + "%";
+
+        div_b.innerHTML +=`Água com Gáz`;
+        progressb.style.width = b_quantia.value / 100 + "%";
+
+        div_esconder.style.display='none';
+
+    }
+</script>

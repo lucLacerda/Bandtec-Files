@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tags button e function</title>
+</head>
+
+<body>
+    <h3>Botão Clicável</h3>
+    <br><br>
+
+
+    <!--
+        A tag button cria um botão clicável na tela. O conteúdo do corpo dessa 
+        tag é o que aparece na "cara" botão
+
+        O atributo onclick faz com que, quando o usuário clicar no botão, 
+        ele executa a função que está especificada entre as aspas, ou seja,
+        ele indica qual função Javascript será invocada. 
+    -->
+    <button onclick="falar_coisas_boas()">Falar coisas boas</button>
+    <br><br>
+
+
+    <!-- 
+        O corpo da tag img pode ser uma imagem, assim teremos uma
+        imagem clicável
+    -->
+    <button onclick="falar_coisas_boas()">
+        <img src="ladygaga.jpg" style="height: 70px;">
+    </button>
+    <br><br>
+
+
+
+    <!-- 
+        É possível usar o atributo style nesta tag, portanto 
+        o corpo da tag img pode ser estilizado....
+    -->
+    <button onclick="falar_coisas_boas()" style="background-color: crimson; color: yellow;">
+        Botão Carnavalesco
+    </button>
+
+
+</body>
+
+</html>
+
+
+<script>
+/*
+    Uma 'function' é uma função, ou seja, um 'programinha' que fica 'guardado' na página
+    pronto para uso sempre for necessário.
+
+    Após a palavra 'function', temos o nome da função. Regras para o nome da função:
+    * NÃO pode começar com número (1,2,3...). Mas pode ter número depois. ex: funcao9()
+    * NÃO pode ter espaços em branco. Ao invés, use, por exemplo, underline (_)
+    * NÃO pode ter hifen (sinal de menos) no nome
+    * Logo após o nome da função DEVE haver um par de parênteses
+    * Não é recomendado o uso de caracteres especiais (acentos, cedilhas etc)
+    * Recomendação: sempre com letras minúsculas e palavras separadas por underline (_)
+
+    Logo após os parênteses da função, abra chaves '{'
+    Fechamos as chaves após todas as instruções que queremos que nossa função realize.
+*/
+
+    function falar_coisas_boas() {
+        alert('Mamãe... Eu sou o maioral!!!!');
+        alert("Fiz o meu primeiro programa em Javascript.");
+        alert("Os comandos dentro da função são executados quando a função é invocada");
+    }
+</script>

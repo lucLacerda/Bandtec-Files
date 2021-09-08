@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 14 B </title>
+</head>
+<body>
+
+    Votos p/ Lucas Lacerda <input id="primeiro_ipt" type="number" placeholder="Ex: 255">
+    <br>
+    Votos p/ Júlia Cristina <input id="segundo_ipt" type="number" placeholder="Ex: 1207">
+    <br>
+    Votos Brancos <input id="terceiro_ipt" type="Number" placeholder="Ex: 1020">
+    <br>
+    Votos Nulos <input id="quarto_ipt" type="Number" placeholder="Ex: 187">
+    <br>
+
+    <button onclick="calcular()" style="background: green; color: white;"><b> Resultado da Eleição </b></button>
+    <br><br>
+    
+    <div id="resultado" ></div>
+
+</body>
+    <script>
+        function calcular() {
+            var conta01 = `${Number(primeiro_ipt.value) + Number(segundo_ipt.value) + Number(terceiro_ipt.value) + Number(quarto_ipt.value)}`;
+            var conta02 = `${Number(primeiro_ipt.value) / Number(conta01) * 100}`;
+            var conta03 = `${Number(segundo_ipt.value) / Number(conta01) * 100}`;
+            var conta04 = `${Number(terceiro_ipt.value) + Number(quarto_ipt.value)}`;
+            var conta05 = `${Number(conta04) / Number(conta01) * 100}`;
+
+            resultado.innerHTML =  `Total de votos: ${(conta01)}<br>
+                                    Lucas Lacerda: ${Number(conta02).toFixed()}% (${(primeiro_ipt.value)} votos)<br>
+                                    Júlia Cristina: ${Number(conta03).toFixed()}% (${(segundo_ipt.value)} votos)<br>
+                                    Inválidos: ${Number(conta05).toFixed()}% (${conta04} votos)<br> `
+            
+            primeiro_ipt.value = '';
+            segundo_ipt.value = '';
+            terceiro_ipt.value = '';
+            quarto_ipt.value = '';
+        }
+        
+    </script>
+</html>

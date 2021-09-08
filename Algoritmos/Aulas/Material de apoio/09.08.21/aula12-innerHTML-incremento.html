@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremento</title>
+</head>
+<body>
+    
+    <button onclick="frutas()">Frutas</button>
+    <button onclick="legumes()">Legumes</button>
+    <button onclick="carnes()">Carnes</button>
+    <button onclick="guloseimas()">Goloseimas</button>
+
+    <div id="div_lista">
+        <h3>Lista de compras</h3>
+    </div>
+
+</body>
+</html>
+<script>
+    /*  O += NÃO TROCA o conteúdo de uma tag. Ele incrementa, ou seja, adiciona
+     o que vem depois dele ao corpo da tag.
+
+    #ficaesperto2 veja que é possível passar imagem e estilos no corpo da tag
+
+    */
+
+    function frutas() {
+        div_lista.innerHTML += "* Frutas <br>";
+    }    
+    function legumes() {
+        div_lista.innerHTML += '* Legumes <br>';
+    }    
+    function carnes() {
+        div_lista.innerHTML += '* <b style="color: red;"> Carnes </b> <br>';
+    }    
+    function guloseimas() {
+        div_lista.innerHTML += '* Goloseimas <img src=bala.jpg style="width: 20%;"> <br>';
+    }    
+</script>

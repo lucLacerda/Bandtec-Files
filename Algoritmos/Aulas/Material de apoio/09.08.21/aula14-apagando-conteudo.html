@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 14 - Apagango Conteúdo</title>
+</head>
+
+<body>
+
+    <h2>Apagando o Conteúdo</h2>
+
+    É preciso <span id="s_amar">amar as</span> pessoas  <span id="s_como">como se não houvesse</span> 
+    amanhã <span id="s_por">por que se você parar</span> pra <span id="s_pensar">pensar na</span> verdade 
+    <span id="s_nao">não há</span> 
+    <br><br>
+    <button onclick="palavras()">Apagar Palavras</button>
+
+</body>
+
+</html>
+<script>
+    
+    // Podemos apagar parte de um texto, basta ter tags para isso. Inofrme o id da tag seguido de .innerHTML
+    // depois usar o sinal = (atribuição) e "" (par de aspas simples ou duplas)
+    
+    function palavras() {
+        s_amar.innerHTML = "";
+        s_como.innerHTML = '';
+        s_por.innerHTML = '';
+        s_pensar.innerHTML = '';
+        s_nao.innerHTML = '';
+    }
+</script>
