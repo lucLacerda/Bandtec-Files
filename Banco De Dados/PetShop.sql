@@ -33,13 +33,13 @@ CREATE TABLE Pet (
 )  AUTO_INCREMENT=101 ;
 
 insert into Pet (tipo, nomePet, raça, data_de_nascimento, preco_pet, fkCliente)
-values 
-('Cachorro', 'Bob', 'Pintcher', '2020-04-05', 1),
-('Gato', 'Nick', 'Persa', '2019-07-30', 2),
-('Papagaio', 'Pingo', 'Algum', '2015-04-17', 3),
-('Cachorro', 'Sandy', 'Coral', '2014-05-11', 1),
-('Coelho', 'Claudin', 'Cueio', '2021-07-09', 4),
-('Peixe', 'Lion', 'Beleza', '2022-09-04', 5);
+values
+('Cachorro', 'Bob', 'Pintcher', '2020-04-05', 988.32, 1),
+('Gato', 'Nick', 'Persa', '2019-07-30', 3447.65, 2),
+('Papagaio', 'Pingo', 'Algum', '2015-04-17', 3110.98, 3),
+('Cachorro', 'Sandy', 'Coral', '2014-05-11', 4762.76, 1),
+('Coelho', 'Claudin', 'Cueio', '2021-07-09', 5624.99, 4),
+('Peixe', 'Lion', 'Beleza', '2022-09-04', 6886.99, 5);
 
 select * from Cliente;
 select * from Pet;
@@ -59,16 +59,20 @@ select * from Pet where nomePet like 'A%';
 
 select * from Cliente where sobrenome = 'Lacerda';
 
-update Cliente set tel_fixo = '3402-3922' where idCliente = 1;
+update Cliente 
+set tel_fixo = '3402-3922'
+where idCliente = 1;
 
 select * from Cliente;
 
-select * from Pet p
-join Cliente c on p.fkCliente = c.idCliente;
+select * from Cliente c
+	join Pet p
+		on p.fkCliente = c.idCliente;
 
-select * from Pet p
-join Cliente c on p.fkCliente = c.idCliente
-where c.nomeCliente = 'Julia';
+select c.nomeCliente, p.preco_pet from Cliente c 
+	join Pet p
+		on p.fkCliente = c.idCliente
+	where c.nomeCliente = 'Lucas';
 
 delete from Pet where idPet = 102;
 
