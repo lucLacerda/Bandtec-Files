@@ -72,11 +72,28 @@ select * from Cliente c
 select c.nomeCliente, p.preco_pet from Cliente c 
 	join Pet p
 		on p.fkCliente = c.idCliente
-	where c.nomeCliente = 'Lucas';
+	where c.nomeCliente like 'Lucas%';
 
 delete from Pet where idPet = 102;
 
 select * from Pet;
+
+-- sum(nomeColuna) soma os valores, com where especifica mais ainda a soma
+select sum(preco_pet) from pet where tipo = "Cachorro";
+
+-- avg(nomeColuna) faz a media dos valores
+select avg(preco_pet) from pet;
+
+-- round(nomeColuna) faz o arrendondamento dos valores
+select round(preco_pet) from p et;
+
+-- min(nomeColuna) traz o valor minimo
+select min(preco_pet) from pet;
+
+-- max(nomeColuna) traz o valor maximo
+select max(preco_pet), tipo from pet;
+
+
 
 -- drop table Pet;
 -- drop table Cliente;
