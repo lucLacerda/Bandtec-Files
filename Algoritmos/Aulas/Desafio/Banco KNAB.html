@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Banco KNAB </title>
+
+</head>
+<body>
+
+    <div id="container">
+        <h1> Seja bem vindo ao Banco KNAB </h1>
+        <br>
+        <h2> Simulação de Emprestimos e Investimentos </h2>
+        <br>
+        <h3> Entre com os dados de sua conta: </h3>
+
+        <input id="ipt_conta" type="number" placeholder="Conta">
+        <input id="ipt_digito" type="number" placeholder="Dígito">
+        <input id="ipt_senha" type="password" placeholder="Senha">
+
+        <br><br>
+        <button onclick="acessar()"> Simular </button>
+    </div>
+
+    <div id="acesso">
+        <h1> O Banco KNAB é a sua melhor opção </h1>
+        <br>
+        <h2> Emprestimos e Investimentos com as melhores taxas do mercado </h2>
+        <h3> Entre com os dados da sua simulação </h3>
+        <br>
+
+        Valor da Operação: <input type="number" id="ipt_valor" placeholder="valor">
+        <br><br>
+
+        <select id="combo_operacao">
+            <option value=""> Selecione a Operação... </option>
+            <option value="emprestimo"> Emprestimo </option>
+            <option value="investimento"> Investimento </option>
+        </select>
+
+        <select id="combo_prazo">
+            <option value=""> Selecione o Prazo... </option>
+            <option value="curto"> Curto </option>
+            <option value="medio"> Médio </option>
+            <option value="longo"> Longo </option>
+        </select>
+        <br><br>
+    <button onclick="simular()"> Mostar o resultado </button>
+
+    </div>
+
+    <div id="resultado">
+
+    </div>
+    
+    
+    
+</body>
+</html>
+<script>
+    var id_emprestimo = 0;
+    var id_investimento = 0;
+
+    function acessar() {
+        var conta = ipt_conta.value;
+        var digito = ipt_digito.value;
+        var senha = ipt_senha.value;
+
+        if (conta == 0) 
+        {alert('Conta tem que ser diferente de zero')}
+
+        if (digito == 0 || digito == 1 || digito == 2 || digito == 3) 
+        { 
+                if(senha == 'manaus')
+          { container.style.display = 'none';
+            acesso.style.display = 'block';}
+        }
+
+        if (digito >= 4 || digito <= 7) 
+        { 
+                if(senha == 'recife') 
+            { container.style.display = 'none';
+              acesso.style.display = 'block';}
+        }
+
+        if (senha == 'fortaleza')
+        { container.style.display = 'none';
+          acesso.style.display = 'block';}
+    }
+
+    function simular() {
+        
+        
+        if (combo_prazo.value == 'curto' || combo_prazo.value == 'medio') 
+            {alert('Esta operação está condicionada ao seu perfil')}
+        
+        if (combo_operacao.value == 'emprestimo') 
+         {div_qualquer.innerHTML += `Simulação  – Para o empréstimo de R$99999,99 no PPPPPP prazo será cobrado os juros de R$ 99999,99 ao ano`}
+    }
+    
+
+
+</script>
