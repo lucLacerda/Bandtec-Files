@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 02 </title>
+</head>
+<body>
+    <h2>Você bebe muito?</h2>
+
+    Quantas latinhas toma por dia? <input id="ipt_qtd" type="Number" placeholder="Ex: 15"> latinhas. <br>
+    <button onclick="bt_calcular()"> Quantas latinhas? </button>
+        <br><br>
+    <span id="span_resultado" ></span>
+</body>
+</html>
+<script>
+    function bt_calcular() {
+       var conta01 = `${Number(ipt_qtd.value) * 365}`
+
+       span_resultado.innerHTML = `Você consome por ano ${conta01} latinhas.`
+    }
+</script>

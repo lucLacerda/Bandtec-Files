@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    <h2> Qual seu time ? </h2>
+
+    <select id="combo_times">
+        <option value=""> Selecione seu Time </option>
+        <option value="sao_paulo"> São Paulo </option>
+        <option value="santos"> Santos </option>
+        <option value="corinthians"> Corinthians </option>
+        <option value="palmeiras"> Palmeiras </option>
+    </select>
+        <br>
+    <button onclick="calcular()"> Fale sobre seu time</button>
+        <br>
+    <div id="div_resultado" ></div>
+ 
+</body>
+</html>
+<script>
+    function calcular() {
+        if (combo_times.value == 'sao_paulo') {
+            div_resultado.innerHTML = '<span style="background-color: red; color: black;" > Salve o Tricolor paulista </span>'
+        } 
+        else if (combo_times.value == 'santos') {
+            div_resultado.innerHTML = '<span style="background-color: white; color: black;" > Agora que dá a bola é o Santos </span>'
+        } 
+        else if (combo_times.value == 'corinthians') {
+            div_resultado.innerHTML = '<span style="background-color: black; color: white;" > Salve o Corinthians </span>'
+        } 
+        else if (combo_times.value == 'palmeiras') {
+            div_resultado.innerHTML = '<span style="background-color: green; color: white;" > Salve o alviverde imponente </span>'
+        }
+    }
+</script>

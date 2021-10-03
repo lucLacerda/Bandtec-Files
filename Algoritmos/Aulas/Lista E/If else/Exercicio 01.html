@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 01 </title>
+</head>
+
+<body>
+    <h2> Auto Escola </h2>
+
+    Informe seu nome: <input id="ipt_nome" type="text">
+    <br>
+    Informe sua idade: <input id="ipt_idade" type="number">
+    <br>
+
+    <button onclick="avaliar()"> Avaliar Aluno </button>
+    <br>
+    <br>
+    <span id="resultado"></span>
+
+</body>
+
+</html>
+<script>
+    function avaliar() {
+        if (ipt_idade.value >= 18) {
+            resultado.innerHTML = `${ipt_nome.value} vamos tirar a CNH?`
+        } else {            
+            resultado.innerHTML = `${ipt_nome.value} vai jogar PlayStation!`
+        }
+    }
+</script>

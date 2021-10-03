@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+<div>
+
+    <select id="combo_estacoes" onchange="quatro_estacoes()">
+            <option value="">Selecione a estação </option>
+            
+            <option value="https://as4estacoesdoano.files.wordpress.com/2014/06/floreesnn.jpg"> Primavera </option>            
+            <option value="https://as4estacoesdoano.files.wordpress.com/2014/06/menor11.jpg"> Verão </option>
+            <option value="https://as4estacoesdoano.files.wordpress.com/2014/07/657879.jpg?w=444">Outono </option>            
+            <option value="https://as4estacoesdoano.files.wordpress.com/2014/07/afrioarrmgeadan.jpg?w=444"> Inverno </option>
+
+    </select>
+</div>
+    <img id="img_estacoes" style="width: 200px;"></img>
+</body>
+
+</html>
+<script>
+    // Essa função vai pegar o valor da option, e injetar na img_estacoes
+    function quatro_estacoes() {
+        img_estacoes.src = combo_estacoes.value
+    }
+</script>

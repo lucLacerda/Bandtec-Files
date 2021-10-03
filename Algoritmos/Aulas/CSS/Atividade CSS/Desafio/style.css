@@ -1,0 +1,32 @@
+
+.A {
+    background-color: #eb1212; 
+    height: 500px; 
+    width: 500px;
+}
+
+.B {
+    background-color: #077fc9; 
+    height: 50%; 
+    width: 50%;
+}
+
+.C {
+    background-color: rgb(0, 0, 0); 
+    color: rgb(254, 0, 246); 
+    font-size: 25px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-weight: bold;
+}
+
+.D {
+    width: 50%; 
+    height: 50vh; 
+    background-color: rgb(200, 255, 0);
+}
+
+.E {
+    width: 75vw; 
+    height: 50%; 
+    background-color: rgb(52, 43, 220);
+}

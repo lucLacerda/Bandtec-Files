@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 26 - if</title>
+</head>
+
+<body>
+<!-- 
+    Fazer um programa que auxilie a identificar quem está com a CNH suspensa e emitir o valor total das multas:
+
+    1 - Receba a quantidade de pontos que a pessoa tem na CNH;
+
+    2 – Se a quantidade for maior que 20 pontos emitir um alerta com a mensagem “Você está com a CNH suspensa”
+
+    3 – Para qualquer quantidade de pontos emitir na página a mensagem: “O Valor Total das multas é de R$ 999,99”, sendo que cada ponto é R$ 78,00, então o valor total = quantidade de pontos multiplicado por 78
+
+-->
+    <h2>Pontos na CNH</h2>
+
+    <input id="ipt_qtde_pontos" placeholder="Digite a quantidade de pontos" />
+    <button onclick="validar()">Validar</button>
+    <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var ax_tot_multa = 0;
+  
+        if (ipt_qtde_pontos.value > 20) {
+            alert ('Você está com a CNH suspensa');
+        }
+
+        ax_tot_multa = ipt_qtde_pontos.value * 78;
+        resposta.innerHTML = `O valor total das multas é de R$${ax_tot_multa.toFixed(2)}`;
+
+    /* Observe que o comando alert é executado somente quando os pontos são maiores que 20,
+        ou seja, quando ipt_qtde_pontos.value é maior que 20 o alert é executado.
+
+    Mas os comandos da linha 39 e 40 não estão dentro da chaves do if, então eles são sempre 
+        executados, independente do if */
+          
+    }
+
+</script>

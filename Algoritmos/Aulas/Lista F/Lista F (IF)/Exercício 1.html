@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Exercício 1</h1>
+    <input type="number" id="Temperatura" placeholder="Temperatura atual"><br><br>
+
+    <button onclick="Ver()">Ver Situação</button>
+</body>
+</html>
+<script>
+    function Ver() {
+        var temp = Temperatura.value
+        if (temp >= 21 && temp <= 24) {
+            alert ("Temperatura Confortável")
+        }
+        else {
+            alert ("Temperatura Desconfortável")
+        }
+    }
+</script>

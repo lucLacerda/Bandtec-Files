@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 Select</title>
+</head>
+
+<body>
+    
+    <!-- 
+    A tag <select> plota uma "combo box" ou "lista suspensa" na tela 
+
+    A tag <option> é uma opção na <select> 
+
+    Para recuperar o valor de uma tag <select>, fazemos exatamente como 
+        numa <input> id_da_tag_select.value    
+    
+    O CORPO da tag <option> é o que aparece para o usuário,
+        o valor do atributo "value" é o valor real do campo da tag <select>
+
+    No "value" pode ter letras, números, palavras etc...
+
+    NÃO COLOCAMOS "id" nas <option> NÃO FAZ SENTIDO!!!
+        
+    É possível criar uma "orientação" numa select.
+        Nada mais é que uma option sem valor (ou com valor 0, por exemplo)
+        com um texto de orientação no CORPO da tag, como no exemplo abaixo
+    -->
+    
+   
+
+    <h2>Seleção de humor</h2>
+
+    <select id="lista_humor">
+        <option value="NÃO ENCHE!!!">Péssimo</option>
+        <option value="O QUE É que você quer?!">Não muito bom</option>
+        <option value="Oi">Neutro</option>
+        <option value="Olá, diga, parsa">Bom</option>
+        <option value="Olá, a vida é bela! Posso ajudar?">Ótimo</option>
+    </select>
+
+    <button onclick="humor()">O que será?</button>
+
+</body>
+
+</html>
+<script>
+
+    function humor() {
+        var meu_humor = lista_humor.value;
+        
+        alert(`Quando te chamarem, você vai responder: ${lista_humor.value}`);
+
+        
+    }
+
+</script>

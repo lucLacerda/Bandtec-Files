@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h1>Exercício 11</h1>
+
+    <input id="Idade" type="number" placeholder="Idade"><br>
+    <input id="Salario" type="number" placeholder="Salário"><br>
+
+    <button onclick="Analisar()">Analisar situação</button><br><br>
+
+    <div id="Resultado"></div>
+    
+</body>
+</html>
+<script>
+    function Analisar() {
+        var idade = Idade.value
+        var salario = Salario.value
+
+        if (idade < 18 && salario <2500) {
+            Resultado.innerHTML = `Menor de idade e liso`
+        }
+        else if (idade < 18 && salario >= 2500) {
+            Resultado.innerHTML = ` Menor de idade e ostentação`
+        }
+        else if (idade >= 18 && salario < 3500) {
+            Resultado.innerHTML = `Maior de idade e liso`
+        }
+        else if (idade >= 18 && salario >= 3500 && salario < 7000) {
+            Resultado.innerHTML = `Maior de idade e ostentação`
+        }
+        else {
+            Resultado.innerHTML = `Maior de idade e mega ostentação`
+        }
+    }
+</script>

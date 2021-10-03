@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h1>Exercício 10</h1>
+    <div id="Div1">
+        <input id="Inicial" type="number" placeholder="Altura Inicial"><br>
+        <input id="Final" type="number" placeholder="Altura Final"><br>
+
+        <button onclick="Verificar()">Verificar</button>
+    </div>
+    
+    <div id="Div2" style="display: none;">
+        <input id="Nome" type="text" placeholder="Nome"><br>
+        <input id="Altura" type="text" placeholder="Altura"><br>
+
+        <button onclick="Ver()">Verificar</button><br><br><br>
+
+        <div id="Resultado"></div>
+    </div>
+</body>
+</html>
+<script>
+    function Verificar() {
+        var ini = Inicial.value
+        var fin = Final.value
+
+        if (ini <1) {
+            alert ("Erro")
+        }
+        else if (fin < ini) {
+            alert ("Erro")
+        }
+        else {
+            Div2.style.display = 'Block'
+            Div1.style.display = 'none'
+
+        }
+    }
+    function Ver() {
+        var ini = Inicial.value
+        var fin = Final.value
+        
+        if (Altura.value >= ini && Altura.value < fin) {
+            Resultado.innerHTML = `O candidato ${Nome.value} com altura de ${Altura.value} participará do processo de seleção de piloto`
+        }
+        else {
+            Resultado.innerHTML = `Infelizmente o candidato ${Nome.value} com altura de ${Altura.value} não atende os requisitos`
+
+        }
+    }
+</script>

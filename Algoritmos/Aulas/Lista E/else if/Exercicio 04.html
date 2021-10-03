@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 04 </title>
+</head>
+<body>
+    <center>
+
+        <input type="number" id="ipt_peso"><br>
+        <button onclick="avaliar()"> Avaliar </button>
+        <br><br>
+        <span id="span_peso"></span>
+
+    </center>
+</body>
+</html>
+<script>
+    function avaliar() {
+
+        var peso = ipt_peso.value;      
+        
+        if(peso == 18.3){
+            span_peso.innerHTML = `Peso perfeito`
+        } else if(peso <= 13.5){
+            span_peso.innerHTML = `Abaixo do peso`
+        } else if(peso <= 21.2){
+            span_peso.innerHTML = `Peso na média`
+        } else if(peso > 21.2){
+            span_peso.innerHTML = `Acima do peso`
+        }
+    }
+</script>

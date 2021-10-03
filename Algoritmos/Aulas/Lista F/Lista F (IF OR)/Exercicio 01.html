@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 01 </title>
+</head>
+<body>
+    <h2>Exercicio 01</h2>
+    
+    Nota do atendimento <input id="ipt_atendimento" type="number" >
+        <br>
+    <button onclick="avaliar()" > Avaliar Atendimento </button>
+        <br><br>
+    <div id="resultado" ></div>
+
+</body>
+</html>
+<script>
+    function avaliar() {
+        var atender = ipt_atendimento.value;        
+
+        if (atender > 6 && atender < 10) 
+            {resultado.innerHTML = `Aprovado`}
+
+        else if (atender >= 5 && atender <= 6)
+            {resultado.innerHTML = `Neutro`}
+        
+        else if (atender >= 0 || atender >= 4)
+            {resultado.innerHTML = `Não Aprovado`}
+
+        else if (atender < 0 && atender > 10)
+            {resultado.innerHTML = `Nota inválida`}        
+        
+    }
+</script>
+
+<br><br><br>
+1. Crie um pequeno sistema de avaliação de atendimento em HTML/JS o qual:
+<br>
+a) Pergunte a nota para o atendimento
+<br>
+b) Ao clicar num botão "Avaliar atendimento", pode uma dessas frases abaixo do botão:
+<br>
+  b.1) "Nota inválida", caso a nota não esteja entre 0 e 10
+  <br>
+  b.2) "Não aprovado", caso a nota for entre 0 e menor que 5
+  <br>
+  b.3) "Neutro", caso a nota for entre 5 e 6
+  <br>
+  b.4) "Aprovado", caso a nota for mais que 6

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 13 </title>
+</head>
+<body>
+    <center>
+         Valor Guardado R$<span id="div_valor">0</span>,00
+        <br>
+        <div id="div_msg" style="color: rgb(0, 184, 184);"> Finanças Ok </div>
+        <button onclick="bt_guardar()" style="background-color: green; color: white;"> Guardar R$5,00 </button>
+        <button onclick="bt_gastar()" style="background-color: red; color: white;"> Gastar R$10,00 </button>
+    </center>
+
+</body>
+</html>
+<script>
+    var valor = 0;
+
+    function bt_guardar() {
+        valor += 5;
+
+        div_valor.innerHTML = `${valor}`;
+
+    }
+
+    function bt_gastar() {
+        valor -= 10;
+
+        div_valor.innerHTML = `${valor}`;
+
+    }
+
+
+</script>
+
+
+
+13. Crie um programa em HTML/JS o qual:
+
+a) Tenha o seguinte texto no topo:
+
+            Valor guardado: R$0.00
+
+b) Tenha os botões "Guardar R$5,00" e "Gastar R$10,00". Ao clicar neles, o valor guardado aumenta ou diminui conforme o texto do botão indica
+
+c) Quando o valor guardado estiver em 0 ou mais, exiba abaixo da frase de a) a frase, na cor azul, Finanças OK!
+
+d) Caso o valor guardado passe de 100, exiba abaixo da frase de c) a frase #ostentação
+
+e) Quando o valor guardado for menor que 0, exiba abaixo da frase de a) a frase, na cor vermelha, Finanças em perigo!
+
+f) Caso o valor guardado seja menor que -20, exiba abaixo da frase de e) a frase Quase um Corinthians!

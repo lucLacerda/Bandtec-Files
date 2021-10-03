@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 07 </title>
+</head>
+<body>
+<center>
+
+    <h2> Calculadora de cansaço do aluno Bandtec </h2>
+    <select id="slct_transporte">
+        <option value=""> Selecione </option>
+        <option value="onibus"> Onibus </option>
+        <option value="metro"> Metro </option>
+        <option value="carro"> Carro </option>
+        <option value="bicicleta"> Bicicleta </option>
+        <option value="lotacao"> Lotação </option>
+
+    </select>
+    <br><br>
+    <button onclick="calcular()"> Calcular Cansaço </button>
+    <br><br>
+
+
+</center>
+</body>
+</html>
+<script>
+    function calcular() {
+        var transporte = slct_transporte.value;
+
+        if (transporte == 'carro' || transporte == 'bicicleta' ) 
+        { alert(`Tá tranquilo ...`) }
+
+        else if (transporte == 'metro')
+        { alert(`Um pouco cansado`) }
+
+        else if (transporte == 'lotacao' || transporte == 'onibus')
+        { alert(`Vish, vive cansado`) }
+    }
+</script>
+
+<br><br><br>
+7. Crie um programa em HTML/JS o qual:
+<br>
+a) Tenha o seguinte texto no topo:
+<br>
+Calculadora de cansaço do aluno Bandtec.
+<br>
+b) Tenha o texto "Meio de transporte" e uma combo para o usuário escolher o meio de transporte dele, podendo ser:
+<br>
+    Ônibus
+    <br>
+    Metrô
+    <br>
+    Carro
+    <br>
+    Bicicleta
+    <br>
+    Lotação
+    <br>
+c) Tenha o botão "Calcular cansaço" que ao clicar mostrar em um alerta o nível de cansaço do usuário.
+<br>
+d) Se o meio de transporte escolhido for "Carro" OU "Bicicleta", exiba em um alert: "Tá tranquilo ..."
+<br>
+e) Se o meio de transporte escolhido for "Metrô", exiba em um alert: "Um pouco cansado".
+<br>
+f) Se o meio de transporte escolhido for "Ônibus" OU "Lotação", exiba em um alert: "Vish ... vive cansado."
+ 
+ 

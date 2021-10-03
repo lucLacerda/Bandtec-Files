@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProvaB</title>
+</head>
+
+<body>
+    <div id="div_dados_entrada">
+        <h1>Distribuidora Pédeagua</h1>
+        <h2>Orçamento de Vendar</h2>
+        <h3>Água Natural</h3>
+        Entre com o valor de venda: <input id="ipt_val_natural"><br>
+        Entre com a quantidade desejada: <input id="ipt_qtde_natural"><br><br>
+        <h3>Água com Gás</h3>
+        Entre com o valor de venda: <input id="ipt_val_comgas"><br>
+        Entre com a quantidade desejada: <input id="ipt_qtde_comgas">
+        <br><br>
+        <img onclick="orcamento()"
+            src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0X2R_5A90Wgt1fwFrLamzsMVqwB3khmllHQ&usqp=CAU"
+            style="height: 40px;">
+    </div>
+
+    <div id="div_resultado" style="display: none;">
+        <h2>Análise Orçamentária:</h2>
+        Total de unidades deste orçamento: <b id="b_tot_unid"></b> 
+        <br>
+        Água Natural – Quantidade solicitada <b id="b_qtde_natural" style="color: blue;"></b>
+            Valor Total da água natural: <b style="color: blue;">R$ </b>
+            <b id="b_val_natural" style="color: blue;"></b> 
+        <br>
+        Água com Gás – Quantidade solicitada <b id="b_qtde_comgas" style="color: green;"></b>
+            Valor Total da água com gas: <b style="color: green;">R$ </b>
+            <b id="b_val_comgas" style="color: green;"></b> 
+        <br>
+        <i style="background-color: grey;"> Valor total deste Orçamento: <b>R$ </b>
+            <b id="b_valor_total"></b> </i>
+        <br><br>
+
+        Neste orçamento a proporção do valor da <span style="background-color: blue;">
+            Água Natural</span> em relação ao total foi de: <b id="b_propor_val_natural"
+            style="color: blue;"></b> <b style="color: blue;">%</b> 
+        <br>
+        Neste orçamento a proporção do valor da <span style="background-color: green;">Água com Gás</span> 
+            em relação ao total foi de: <b id="b_propor_val_comgas" style="color: green;"></b>
+            <b style="color: green;">%</b> 
+        <br>
+        A quantidade de Água Natural de <b id="b_propor_qtde_natural" style="color: blue;"></b>
+            <b style="color: blue;">%</b> em relação ao total e a Água com Gás é:
+            <b id="b_propor_qtde_comgas" style="color: green;"></b>
+            <b style="color: green;">%</b> 
+        <br><br>
+
+        <div id="div_barra_natural" style="background-color: blue; height: 30px; float: left; ;"></div>
+        <div id="div_barra_comgas" style="background-color: green; height: 30px; float: left;"></div>
+        <br><br><br>
+
+        <img src="https://image.freepik.com/fotos-gratis/quadro-negro-inscrito-com-formulas-e-calculos-cientificos_1150-19413.jpg"
+            style="height: 250px;">
+    </div>
+</body>
+
+</html>
+<script>
+    function orcamento() {
+        var ax_qtde_natural = Number(ipt_qtde_natural.value);
+        var ax_val_natural = Number(ipt_val_natural.value);
+        var ax_val_comgas = Number(ipt_val_comgas.value);
+        var ax_qtde_comgas = Number(ipt_qtde_comgas.value);
+
+        b_tot_unid.innerHTML = ax_qtde_natural + ax_qtde_comgas;
+
+        b_qtde_natural.innerHTML = ax_qtde_natural;
+        b_val_natural.innerHTML = (ax_val_natural * ax_qtde_natural).toFixed(2);
+
+        b_qtde_comgas.innerHTML = ax_qtde_comgas;
+        b_val_comgas.innerHTML = (ax_val_comgas * ax_qtde_comgas).toFixed(2);
+
+        b_valor_total.innerHTML = (ax_val_natural * ax_qtde_natural +
+            ax_val_comgas * ax_qtde_comgas).toFixed(2);
+
+        ax_propor_val_natural = ax_val_natural * ax_qtde_natural /
+            (ax_val_natural * ax_qtde_natural + ax_val_comgas * ax_qtde_comgas) * 100;
+        ax_propor_val_comgas = ax_val_comgas * ax_qtde_comgas /
+            (ax_val_natural * ax_qtde_natural + ax_val_comgas * ax_qtde_comgas) * 100;
+
+        b_propor_val_natural.innerHTML = ax_propor_val_natural.toFixed(1);
+        b_propor_val_comgas.innerHTML = ax_propor_val_comgas.toFixed(1);
+
+        b_propor_qtde_natural.innerHTML = (ax_qtde_natural / (ax_qtde_natural + ax_qtde_comgas) * 100).toFixed(1);
+        b_propor_qtde_comgas.innerHTML = (ax_qtde_comgas / (ax_qtde_natural + ax_qtde_comgas) * 100).toFixed(1);
+
+        div_barra_natural.style.width = ax_propor_val_natural + '%';
+        div_barra_comgas.style.width = ax_propor_val_comgas + '%';
+
+        div_dados_entrada.innerHTML = '';
+        div_resultado.style.display = 'block';
+    }
+</script>

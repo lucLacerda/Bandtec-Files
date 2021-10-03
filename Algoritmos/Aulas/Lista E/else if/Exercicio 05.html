@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 05 </title>
+</head>
+<body>
+    <h2> Quente Frio </h2>
+
+        Informe a temperatura:
+                <input id="ipt_temp" oninput="temperatura()" type="number"> ºC
+            <br><br>
+            
+        <div id="div_resultado"></div>
+
+
+</body>
+</html>
+<script>
+    function temperatura() {
+        if (ipt_temp.value < 14) {
+            
+            div_resultado.innerHTML = '<span style="background-color: blue; color: white;"> Congelante </span>'
+        } 
+        else if (ipt_temp.value < 21) {
+
+            div_resultado.innerHTML = '<span style="background-color: lightskyblue; color: white;"> Com Frio </span>'
+        } 
+        else if (ipt_temp.value < 24) {
+
+            div_resultado.innerHTML = '<span style="background-color: rgb(29, 226, 200); color: white;"> Confortavel </span>'
+        } 
+        else if (ipt_temp.value < 31) {
+
+            div_resultado.innerHTML = '<span style="background-color: rgb(255, 174, 0); color: white;"> Com Calor </span>'
+        } 
+        else {
+
+            div_resultado.innerHTML = '<span style="background-color: rgb(255, 72, 0); color: white;"> Calor Escaldante </span>'
+        } 
+
+    }
+</script>

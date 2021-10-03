@@ -1,0 +1,11 @@
+.div_metade {
+    width: 50%;
+    background-color: rgb(192, 192, 192);
+    height: 50px;
+}
+.div_filha {
+    background-color: gold;
+    height: 100%;
+    width: 80%;
+
+}

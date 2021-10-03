@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 29 onchange</title>
+</head>
+
+<body>
+
+    <h2>Seleção de humor</h2>
+
+    
+    <!--
+    onchange -> O que deve acontecer quando o valor da select for alterado
+     -->
+    <select id="lista_humor" onchange="humor()">
+        <option value="NÃO ENCHE!!!">Péssimo</option>
+        <option value="O QUE É que você quer?!">Não muito bom</option>
+        <option value="Oi">Neutro</option>
+        <option value="Olá, diga, parsa">Bom</option>
+        <option value="Olá, a vida é bela! Posso ajudar?">Ótimo</option>
+    </select>
+
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+
+    function humor() {
+
+        div_frase.innerHTML = `Quando te chamarem, você vai responder: ${lista_humor.value}`;
+    }
+
+</script>

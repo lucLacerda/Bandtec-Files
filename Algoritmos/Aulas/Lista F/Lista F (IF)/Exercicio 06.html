@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    <input id="ipt_nota" type="number" >
+    <br>
+    <button onclick="avaliar()" > Avaliar aluno </button>
+</body>
+</html>
+<script>
+    function avaliar() {
+
+        if (ipt_nota.value < 6 )
+        { alert('Aluno não aprovado') }
+
+        else if (ipt_nota.value >= 8.5 && ipt_nota.value < 10) 
+        { alert('Aluno exemplar!') }
+
+        else if (ipt_nota.value >= 6 && ipt_nota.value < 8.5)
+        { alert('Aluno comum e aprovado') }
+    }
+</script>

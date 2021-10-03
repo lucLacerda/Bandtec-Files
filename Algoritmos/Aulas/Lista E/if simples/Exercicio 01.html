@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 01 </title>
+</head>
+<body>
+    <h2>Vamos pra festa?</h2>
+
+    Qual a sua idade? <input id="ipt_idade" type="Number" placeholder="Ex: 15"> anos.
+    <button onclick="bt_calcular()"> Confirmar </button>
+</body>
+</html>
+<script>
+    function bt_calcular() {
+       if (ipt_idade.value < 18) 
+           { alert ('#Pedir permissão pro responsável')}
+        
+        alert ('#PartiuFesta')
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 02 </title>
+</head>
+<body>
+    Qual sua média? <input type="number" id="ipt_media">
+    <br>
+    Qual sua renda total familiar <input type="number" id="ipt_renda"> 
+    <br>
+    <button onclick="verificar()" > Verificar ajuda </button>
+</body>
+</html>
+<script>
+    
+    function verificar() {
+        if (ipt_media.value <= 1050 && ipt_renda.value <= 2100) {
+        alert('Você terá direito!')
+    } else {
+        alert('Você não terá direito')
+    }
+}
+</script>
+
+
+ 

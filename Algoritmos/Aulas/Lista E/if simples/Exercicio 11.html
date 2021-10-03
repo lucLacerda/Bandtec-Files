@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 11 </title>
+</head>
+<body> 
+    <h2> Analise Familiar</h2>
+
+    Informe a quantidade de filhos: <input id="ipt_filhos" type="number">
+    <br>
+    <button onclick="analisar()"> Analisar família </button>
+    <br><br>
+    <span id="resultado" ></span>
+    
+</body>
+</html>
+<script>
+    function analisar() {  
+        if (ipt_filhos.value >= 1) {
+            resultado.innerHTML = `Não tem TV <br>`
+        }
+        if (ipt_filhos.value >= 2) {
+            resultado.innerHTML += `Não tem internet <br>`
+        }
+        if (ipt_filhos.value >= 3) {
+            resultado.innerHTML += `Não tem video game <br>`
+        }
+        if (ipt_filhos.value >= 4) {
+            resultado.innerHTML += `Não tem Netflix <br>`
+        }
+    }
+</script>

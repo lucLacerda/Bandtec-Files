@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 04 </title>
+</head>
+<body>
+    <select id="slct_cafe">
+        <option value="ovos"> Ovos </option>
+        <option value="leite"> Leite de arroz </option>
+        <option value="bacon"> Bacon </option>
+    </select>
+            <br>
+    <select id="slct_almoco">
+        <option value="bife"> Bife </option>
+        <option value="hamburguer"> Hamburguer de Soja</option>
+        <option value="frango"> Frango Grelhado </option>
+    </select>
+            <br>
+    <select id="slct_janta">
+        <option value="picanha"> Picanha de Soja</option>
+        <option value="cupim"> Cupim </option>
+        <option value="coracao"> Coração </option>
+    </select>
+    <br>
+    <button onclick="verificar()" > Sou vegano </button>
+</body>
+</html>
+<script>
+    function verificar() {
+
+        if (slct_cafe.value == 'leite' && 
+            slct_almoco.value == 'hamburguer' && 
+            slct_janta.value == 'picanha')
+        { alert('Sim, você é vegano!') }
+
+        else { alert('Não, você não é vegano') }
+    }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Exercício 14</h1>
+    <div id="Piloto">
+        <input id="Altura_InicialP" type="number" placeholder="Altura Inicial do Piloto"><br>
+        <input id="Altura_FinalP" type="number" placeholder="Altura Final do Piloto"><br><br><br>
+    </div>
+
+    <div id="Basquete">
+        <input id="Altura_InicialJ" type="number" placeholder="Altura Inicial do Jogador"><br>
+        <input id="Altura_FinalJ" type="number" placeholder="Altura Final do Jogador"><br><br>
+    </div>
+
+    <div id="Processo" style="display: none;">
+        <h1>Processo de Seleção de novos atletas</h1>
+        <h3>Critério de Seleção de piloto – altura entre <span id="span1"></span> até <span id="span2"></span></h3>
+        <h3>Critério de Seleção de jogador de basquete – altura entre <span id="span3"></span> até <span id="span4"></span></h3>
+
+        <input id="Nome" type="text" placeholder="Nome do Candidato"><br>
+        <input id="Altura_Cand" type="text" placeholder="Altura do Candidato"><br><br>
+
+        <select onchange="esporte()" id="modalidade">
+            <option value="">Modalidade</option>
+            <option value="Piloto">Piloto</option>
+            <option value="Basquete">Basquete</option>
+        </select><br><br>
+
+        <div id="Resultado"></div>
+    </div>
+
+    <button id="Botão" onclick="Selecionar()">Selecionar</button>
+    
+</body>
+</html>
+<script>
+    function Selecionar() {
+        var aip = Altura_InicialP.value
+        var afp = Altura_FinalP.value
+        var aib = Altura_InicialJ.value
+        var afb = Altura_FinalJ.value
+
+        if (aip < 1 && aib < 1.5) {
+            alert ("Erro")
+        }
+        else if (afp < aip && afb < aib) {
+            alert ("Erro")
+            }
+        else {
+
+        Piloto.style.display = 'none'
+        Basquete.style.display = 'none'
+        Botão.style.display = 'none'
+        Processo.style.display = 'Block'
+
+
+        span1.innerHTML = aip
+        span2.innerHTML = afp
+        span3.innerHTML = aib
+        span4.innerHTML = afb
+        }
+
+    }
+    function esporte() {
+        var aip = Altura_InicialP.value
+        var afp = Altura_FinalP.value
+        var aib = Altura_InicialJ.value
+        var afb = Altura_FinalJ.value
+        var altura = Altura_Cand.value
+
+        if (modalidade.value == 'Piloto' &&  altura >=aip && altura < afp) {
+            Resultado.innerHTML = `O candidato ${Nome.value} com altura de ${altura} participará do processo de seleção de piloto`
+        }
+        else if (modalidade.value == 'Basquete' && altura >= aib && altura < afb) {
+            Resultado.innerHTML = `O candidato ${Nome.value} com altura de ${altura} participará do processo de seleção de Basquete`
+        }
+            else {
+                Resultado.innerHTML = `Infelizmente o candidato ${Nome.value} com altura de ${altura} não atende os requisitos`
+            }
+        
+    }
+    
+</script>

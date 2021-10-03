@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 02 </title>
+</head>
+<body>
+<center>
+    <h2> Renda Familiar</h2>
+
+    Informe sua renda familiar total: <input id="ipt_renda" type="number" oninput="ipt_valor()">
+
+    <div id="div_resultado"></div>
+</center>
+</body>
+</html>
+<script>
+    function ipt_valor() {
+        var renda = ipt_renda.value
+
+        if (renda >= 9500){
+            div_resultado.innerHTML = "Classe A"
+        } else if (renda >= 2500) {
+            div_resultado.innerHTML = "Classe B"
+        } else if (renda >= 900) {
+            div_resultado.innerHTML = "Classe C"
+        } else if (renda >= 250) {
+            div_resultado.innerHTML = "Classe D"
+        } else {
+            div_resultado.innerHTML = "Classe E"
+        }
+    }
+</script>   

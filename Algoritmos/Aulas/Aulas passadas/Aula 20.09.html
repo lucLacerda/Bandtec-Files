@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula 20.09 </title>
+</head>
+<body>
+    <h2> Média de Gols </h2>
+    Informe a quantidade de partidas <input id="ipt_jogos" type="number"><br>
+    Informe a quantidade de gols <input id="ipt_gols" type="number"><br>
+    
+    <button onclick="calcular()"> Calcular </button><br><br>
+
+    <div id="div_resultado" ></div>
+    <div id="div_media" ></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var media =  ipt_gols.value / ipt_jogos.value;
+
+        if (media >= 0.6) {
+            div_resultado.innerHTML = "Atacante de Futuro";
+        } else if (media >= 0.2) {
+            div_resultado.innerHTML = "Atacante Mediano";
+        } else {
+            alert ("Mudar de Posição!!")
+            div_resultado.innerHTML = "Atacante Ruim";
+        }
+        div_media.innerHTML = `${media.toFixed}`;
+    }
+</script>

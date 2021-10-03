@@ -1,0 +1,32 @@
+
+/* Pra chamar algo no class, utiliza se o . */
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    display: flex;
+
+}
+
+.primeiro {
+    height: 30vh;
+    width: 30vw;
+    background-color: red;
+
+}
+
+.segundo {
+    height: 30vh;
+    width: 30vw;
+    background-color: blue;
+    padding: 100px 100px;
+
+}
+
+.texto {
+    color: #ffffff;
+    background-color: chartreuse;
+    font-family: Impact, fantasy, Arnoldboecklin, fantasy;
+    
+}
+

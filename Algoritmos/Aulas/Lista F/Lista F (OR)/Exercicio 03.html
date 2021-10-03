@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 03 </title>
+</head>
+<body>
+    <h2> Ajuda Emergencial </h2>
+    Informe sua renda individual <input id="ipt_renda" type="number">
+    <br>
+    Informe sua renda familiar <input id="ipt_familiar" type="number">
+    <br><br>
+    <div id="resultado"></div>
+    <br>
+    <button onclick="calcular()"> Terei o Benefício</button>
+    
+</body>
+</html>
+<script>
+    function calcular() {
+        var renda = ipt_renda.value;
+        var familiar = ipt_familiar.value;
+
+        if (renda <= 2000 || familiar <= 3000) 
+        { resultado.innerHTML = `Você terá direito ao auxílio!` }
+
+        else 
+        { resultado.innerHTML = `Sem direito ao auxílio` }
+    }
+</script>
+
+<br><br><br>
+3. Crie um programa em HTML/JS o qual ajudará o governo a saber se ele dará a ajuda emergencial ao Covid19 a um cidadão:
+<br>
+a) Solicite o valor da renda individual do usuário
+<br>
+b) Solicite o valor da renda familiar do usuário
+<br>
+c) Ao clicar em "Terei o benefício", podem aparecer as seguintes mensagens:
+<br>
+   "Você terá direito ao auxílio", caso renda individual for até 2000 ou caso a renda familiar for até 3000
+   <br>
+
+   "Sem direito ao auxílio", caso contrário

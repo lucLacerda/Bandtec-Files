@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 08 </title>
+</head>
+<body>
+
+    <center>
+
+        Informe a quantidade de pães franceses que você come por dia: <input id="ipt_pao" type="number"><br>
+        Informe a quantidade de biscoitos que você come por dia<input id="ipt_biscoito" type="number"><br>
+        Informe a quantidade de copos de nescau que você toma por dia<input id="ipt_achocolatado" type="number"><br>
+        <br>
+        <button onclick="verificar()"> Verificar Calorias </button>
+        <br><br>
+        <div id="div_resultado"></div>
+
+    </center>
+    
+</body>
+</html>
+
+<script>
+
+    var caloria_pao = 50;
+    var caloria_biscoito = 80;
+    var caloria_achocolatado = 70;
+
+    function verificar(){
+        var quantidade_pao = ipt_pao.value;
+        var quantidade_biscoito = ipt_biscoito.value;
+        var quantidade_achocolatado = ipt_achocolatado.value;
+
+        var consumo_pao = caloria_pao * quantidade_pao;
+        var consumo_biscoito = caloria_biscoito * quantidade_biscoito;
+        var consumo_achocolatado = caloria_achocolatado * quantidade_achocolatado;
+        var total_calorias = consumo_pao + consumo_biscoito + consumo_achocolatado;
+
+        if(total_calorias < 200){
+            div_resultado.innerHTML = `Você consumiu ${total_calorias} calorias. Parabéns, vai sair em forma da quarentena!`;
+        } else if(total_calorias < 400){
+            div_resultado.innerHTML = `Você consumiu ${total_calorias} calorias. Cuidado, vai ficar mais "fofinho(a)" após quarentena!`;
+        } else{
+            div_resultado.innerHTML = `Você consumiu ${total_calorias} calorias. Bom, acho que muitos não vão te reconhecer após a quarentena`;
+        }
+
+    }
+
+</script>

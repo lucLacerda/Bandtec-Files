@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 03 </title>
+</head>
+<body> 
+    <h2> Você é um bom aluno(a)? </h2>
+
+    Informe sua primeira nota <input id="ipt_primeira" type="Number">.
+    <br>    
+    Informe sua segunda nota <input id="ipt_segunda" type="Number">.
+    <br>
+    Informe sua terceira nota <input id="ipt_terceira" type="Number">.
+    <br>
+    <button onclick="bt_calcular()"> Analisar Desempenho </button>
+    <br><br>
+    <span id="resultado" ></span>
+</body>
+</html>
+<script>
+    function bt_calcular() {
+        var media = `${(Number(ipt_primeira.value) + Number(ipt_segunda.value) + Number(ipt_terceira.value)) / 3}`
+        
+        if (media >= 9.4) {
+            alert ('Parabéns, você é fora de série!')
+        } 
+
+        resultado.innerHTML = `Sua média é ${Number(media).toFixed(2)}`       
+
+    }
+</script>

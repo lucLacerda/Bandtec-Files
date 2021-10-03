@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    <h2> Clima Tempo </h2>
+
+    Informe a temperatura do ambiente <input id="ipt_temp" type="number"> 
+        <br><br>
+    <button onclick="verificar()"> Verificar clima </button>
+        <br><br>
+    <span id="resultado"></span>
+
+    
+
+</body>
+</html>
+<script>
+    function verificar() {
+        if (ipt_temp.value < 9) {
+        resultado.innerHTML = `Apropriada p/ conservar alimento <br> 
+                               <img src="https://www.iped.com.br/_upload/content/2015/03/03/identificar-alimentos-bom-estado.jpg">`
+    }   else {
+        resultado.innerHTML = `Inapropriada p/ conservar alimento <br> 
+                              <img src="https://conteudo.imguol.com.br/c/entretenimento/1a/2018/09/11/pao-estragado-1536706056533_v2_450x450.jpg.webp">`
+    }
+}
+</script>

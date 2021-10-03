@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 03 </title>
+</head>
+
+<body>
+    <h2> Bom Doce </h2> 
+
+    Informe a quantidade de chocolates comprados: <input id="ipt_qtd" type="number">
+    <br>
+    
+    <button onclick="comprar()"> Comprar </button>
+    <br>
+    <br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    function comprar() {
+        var preco = 3
+
+            if (ipt_qtd.value == "") {
+                resultado.innerHTML = `Você esqueceu de informar a quantidade!`
+                
+            } else if (ipt_qtd.value >= 12){
+                preco = 2.5
+                resultado.innerHTML = `${Number(ipt_qtd.value) * preco}`}             
+            else {
+                resultado.innerHTML = `${Number(ipt_qtd.value) * preco}`}
+
+    }
+</script>

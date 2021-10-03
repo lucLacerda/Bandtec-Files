@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 1</title>
+</head>
+<body>
+    <h1>Distribuidora Pedeágua</h1>
+    
+    <div id="div_formulario_entrada">
+        <h2>Orçamento de Vendas</h2>
+        <b>Água Natural</b>
+        <br>
+        Entre com o valor da venda: <input id="input_valor_mineral" type="text">
+        <br>
+        Entre com a quantidade desejada: <input id="input_qtd_mineral" type="text">
+        <br><br><br>
+        <b>Água Com Gás</b><br>
+        Entre com o valor da venda: <input id="input_valor_comgas" type="text">
+        <br>
+        Entre com a quantidade desejada: <input id="input_qtd_comgas" type="text">
+        <br><br>
+
+        <img onclick="fazer_orcamento()" style="height: 60px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0X2R_5A90Wgt1fwFrLamzsMVqwB3khmllHQ&usqp=CAU" alt="carrinho de compras">
+        <br><br>
+        
+        ↓ OUTRA FORMA DE FAZER O CARRINHO CLICÁVEL! ↓
+        <br>
+        <button onclick="fazer_orcamento()">
+            <img style="height: 60px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0X2R_5A90Wgt1fwFrLamzsMVqwB3khmllHQ&usqp=CAU" alt="carrinho de compras">
+        </button>
+    </div>
+    
+    <div id="div_orcamentario" style="display: none">
+        <h2>Análise Orçamentária</h2>
+        Total de unidades deste orçamento: <b id="b_qtd_total"></b> 
+        <br><br>
+        Água Natural - Quantidade Solicitada: <b id="b_qtd_total_mineral" style="color: blue"></b>
+        Valor Total da água natural: <b id="b_valor_total_mineral" style="color: blue"></b>
+        <br>
+        Água com Gás - Quantidade Solicitada: <b id="b_qtd_total_comgas" style="color: green"></b>
+        Valor Total da água com gás: <b id="b_valor_total_comgas" style="color: green"></b>
+        <br><br>
+        <i style="background-color: lightgray">Valor total deste Orçamento: <b id="b_valor_total"></b></i>
+        <br><br>
+        Neste orçamento, a proporção do valor da <span style="background-color: lightblue;">Água Mineral</span> em relação ao total foi de: <b id="b_percentual_valor_mineral" style="color: blue"></b>
+        <br>
+        Neste orçamento, a proporção do valor da <span style="background-color: lightgreen">Água com Gás</span> em relação ao total foi de: <b id="b_percentual_valor_comgas" style="color: green"></b>
+        <br><br>
+        A quantidade de Água Mineral é de <b id="b_percentual_qtd_mineral" style="color: blue"></b> em relação ao total, e a Água com Gás é: <b id="b_percentual_qtd_comgas" style="color: green"></b>
+        
+        <br><br>
+        <div id="div_barra_mineral" style="background-color: blue; height: 30PX; width: 0; float: left;"></div>
+        <div id="div_barra_comgas" style="background-color: green; height: 30PX; width: 0; float: left;"></div>
+        <br><br>
+
+        <img style="height: 25  0px" src="https://image.freepik.com/fotos-gratis/quadro-negro-inscrito-com-formulas-e-calculos-cientificos_1150-19413.jpg" alt="">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function fazer_orcamento() {
+        var valor_mineral = Number(input_valor_mineral.value);
+        var qtd_mineral = Number(input_qtd_mineral.value);
+
+        var valor_comgas = Number(input_valor_comgas.value);
+        var qtd_comgas =  Number(input_qtd_comgas.value);
+
+        var valor_total_mineral = valor_mineral * qtd_mineral;
+        var valor_total_comgas = valor_comgas * qtd_comgas;
+
+        var valor_total = valor_total_mineral + valor_total_comgas;
+        var qtd_total = qtd_mineral + qtd_comgas;
+
+        var percentual_valor_mineral = (valor_total_mineral/valor_total) * 100;
+        var percentual_valor_comgas = (valor_total_comgas/valor_total) * 100;
+
+        var percentual_qtd_mineral = (qtd_mineral/qtd_total) * 100;
+        var percentual_qtd_comgas = (qtd_comgas/qtd_total) * 100;
+
+        b_qtd_total.innerHTML = qtd_total;
+        b_valor_total.innerHTML = `R$${valor_total.toFixed(2)}`;
+
+        b_qtd_total_mineral.innerHTML = qtd_mineral;
+        b_qtd_total_comgas.innerHTML = qtd_comgas;
+
+        b_valor_total_mineral.innerHTML = `R$${valor_total_mineral.toFixed(2)}`;
+        b_valor_total_comgas.innerHTML = `R$${valor_total_comgas.toFixed(2)}`;
+
+        b_percentual_valor_mineral.innerHTML = `${percentual_valor_mineral.toFixed(2)}%`;
+        b_percentual_valor_comgas.innerHTML = `${percentual_valor_comgas.toFixed(2)}%`;
+
+        b_percentual_qtd_mineral.innerHTML = `${percentual_qtd_mineral.toFixed(2)}%`;
+        b_percentual_qtd_comgas.innerHTML = `${percentual_qtd_comgas.toFixed(2)}%`;
+
+        div_barra_mineral.style.width = `${percentual_valor_mineral}%`;
+        div_barra_comgas.style.width = `${percentual_valor_comgas}%`;
+
+        div_formulario_entrada.style.display = "none";
+        div_orcamentario.style.display = "block";
+
+    }
+
+</script>

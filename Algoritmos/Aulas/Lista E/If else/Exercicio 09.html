@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 09 </title>
+</head>
+<body>
+    <center>
+
+        <h2> Selecione uma Especie </h2>
+
+        <select id="combo_especie" onchange="slct_animais()">
+            <option value="selecione">- Escolha uma espécie -</option>
+            <option value="option_oviparos"> Ovíparos </option>
+            <option value="option_mamiferos"> Mamíferos </option>
+        </select>
+            <br><br>
+
+        <select id="combo_oviparos" onchange="slct_oviparos()" style="display: none;">
+            <option value="selecione">- Escolha um oviparo -</option>
+            <option value="option_galinha"> Galinha </option>
+            <option value="option_peixe"> Peixe </option>
+            <option value="option_tartaruga"> Tartaruga </option> 
+        </select>
+
+        <select id="combo_mamiferos" onchange="slct_mamiferos()" style="display: none;">
+            <option value="selecione">- Escolha uma mamífero -</option>
+            <option value="option_elefante"> Elefante </option>
+            <option value="option_porco"> Porco </option>
+            <option value="option_coelho"> Coelho </option> 
+        </select>
+            <br><br>
+
+            <img id="img_animais" style="display: none; height: 200px;">
+
+    </center>
+</body>
+</html>
+<script>
+
+    function slct_animais() {
+        if(combo_especie.value == "option_oviparos") {
+
+            combo_oviparos.style.display = "block";
+            combo_mamiferos.style.display = "none";
+
+        } else if (combo_especie.value == "option_mamiferos") {
+
+            combo_mamiferos.style.display = "block";
+            combo_oviparos.style.display = "none";
+
+        } else if (combo_especie.value == "selecione") {
+
+            combo_mamiferos.style.display = "none";
+            combo_oviparos.style.display = "none";
+            img_animais.style.display = "none";
+            
+        }
+    }
+
+    function slct_oviparos() {
+        if (combo_oviparos.value == "option_galinha") {
+
+            img_animais.style.display = "block"
+            img_animais.src = "https://midia.gruposinos.com.br/_midias/jpg/2020/05/11/galinha_pintadinha-18990626.jpg?ims=filters:quality(70)"
+            
+        } else if (combo_oviparos.value == "option_peixe") {
+
+            img_animais.style.display = "block"
+            img_animais.src = "https://i.pinimg.com/originals/40/f4/4d/40f44d12cbfff93eb62d959283ea35f3.jpg"
+        
+        } else if (combo_oviparos.value == "option_tartaruga") {
+
+            img_animais.style.display = "block"
+            img_animais.src = "https://i.pinimg.com/originals/94/e0/f6/94e0f64f2a58db30cc4d6f2c8e9566fe.jpg"
+        }   
+    }
+
+    function slct_mamiferos() {
+        if (combo_mamiferos.value == "option_elefante") {
+
+        img_animais.style.display = "block"
+        img_animais.src = "https://poplembrancinhas.com.br/wp-content/uploads/2020/07/desenho-de-dumbo-2.jpg"
+
+        } else if (combo_mamiferos.value == "option_porco") {
+
+        img_animais.style.display = "block"
+        img_animais.src = "https://gartic.com.br/imgs/mural/th/the_simpsons_group/porco-aranha-hrs-4.png"
+
+        } else if (combo_mamiferos.value == "option_coelho") {
+
+        img_animais.style.display = "block"
+        img_animais.src = "https://midia.gruposinos.com.br/_midias/jpg/2019/04/21/pernalonga-3743714.jpg"
+        }
+    }
+</script>

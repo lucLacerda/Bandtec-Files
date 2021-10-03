@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 5 </title>
+</head>
+<body>
+    <!-- Select com as options de 1 a 10 -->
+    <select id="combo_tabuada" onchange= "tabuada()">
+        <option value=""> Selecione a tabuada </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+        <option value="5"> 5 </option>
+        <option value="6"> 6 </option>
+        <option value="7"> 7 </option>
+        <option value="8"> 8 </option>
+        <option value="9"> 9 </option>
+        <option value="10"> 10 </option>
+    </select>
+    <br>
+    <!-- Div onde vai surgir o resultado -->
+    <div id="div_tabuada"></div>
+    
+</body>
+</html>
+<script>
+function tabuada(){
+    // A variavel pega o valor da tabuada, e no innerHTMl, esse valor é multiplicado de 01 a 10
+    var tabuada = combo_tabuada.value
+        
+       div_tabuada.innerHTML = `${tabuada}x1 = ${tabuada*01} <br>
+                                ${tabuada}x2 = ${tabuada*02} <br>
+                                ${tabuada}x3 = ${tabuada*03} <br>
+                                ${tabuada}x4 = ${tabuada*04} <br>
+                                ${tabuada}x5 = ${tabuada*05} <br>
+                                ${tabuada}x6 = ${tabuada*06} <br>
+                                ${tabuada}x7 = ${tabuada*07} <br>
+                                ${tabuada}x8 = ${tabuada*08} <br>
+                                ${tabuada}x9 = ${tabuada*09} <br>
+                                ${tabuada}x10 = ${tabuada*10} <br>`;    
+}
+</script>
