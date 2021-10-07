@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prova </title>
+</head>
+<body>
+<center>
+
+    <div id="div_container">
+
+        <h1> Aco Pip – AS MELHORES PIPOCAS DO BRASIL </h1>
+
+        <select id="select_produto">
+            <option value=""> Selecione um produto </option>
+            <option value="pipoca_chocolate"> Pipoca com Chocolate </option>
+            <option value="pipoca_caramelo"> Pipoca com Caramelo </option>
+        </select>
+
+        <select id="select_embalagem">
+            <option value=""> Selecione um produto </option>
+            <option value="pacote_pequeno"> Pacote Pequeno </option>
+            <option value="pacote_grande"> Pacote Grande </option>
+        </select>
+            <br><br>
+        Informe a quantidade: <input onchange="ipt_quantidade()" id="input_quantidade" type="number" placeholder="Ex: 521">
+            <br><br>
+        Gostaria de adicionar mais açúcar? <input onchange="ipt_acucar()" id="input_acucar" type="number" placeholder="Ex: 4">
+            <br><br>
+        <button id="botao_orcar" onclick="bt_orcar()" style="padding: 5px 10px; color: #ffffff; background-color: red; border-radius: 5px;"> Orçar </button> 
+        
+        <button id="botao_novo_orcamento" onclick="bt_novo()" style="display: none;" > Novo Orçamento </button>
+
+    </div>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+
+    <button id="botao_comprar" onclick="bt_comprar()" style="display: none; padding: 5px 10px; color: #ffffff; background-color: #008000; border-radius: 5px;" > Comprar </button>
+
+<b></b>
+
+</center>
+</body>
+</html>
+<script>
+    function ipt_acucar() {
+        var acucar = input_acucar.value;
+
+        if (acucar > 8) {
+            alert("Quantidade adicional de açúcar invalida")
+        }
+    }
+
+    function ipt_quantidade() {
+         // variavel da quantidade
+         var quantidade = input_quantidade.value;        
+
+        if (quantidade < 500) {
+            alert("Vendemos somento no atacado")
+        } 
+        else if (quantidade > 5000) {
+            alert("Consulte nosso PCP (planejamento e controle da produção)")
+        }
+        
+    }
+
+    function bt_orcar() {
+            // variaveis das quantidades
+        var quantidade = input_quantidade.value;
+        var acucar = input_acucar.value;
+
+        var preco_adicional1 = caramelo_peq * 0.7;
+        var preco_adicional2 = caramelo_gra * 0.7;
+        var preco_adicional3 = chocolate_peq * 0.7;
+        var preco_adicional4 = chocolate_gra * 0.7;
+
+
+            // variaveis para o orcamento do caramelo
+        var caramelo_peq = (quantidade * 1.10).toFixed(2);
+        var caramelo_gra = (quantidade * 1.70).toFixed(2);
+
+            // variaveis para o orcamento do chocolate
+        var chocolate_peq = (quantidade * 1.20).toFixed(2);
+        var chocolate_gra = (quantidade * 1.80).toFixed(2);
+
+            // caso quantidade nao seja informada
+        if (quantidade == '') {
+            alert("Insira uma quantidade válida")
+        }
+
+               
+            // ifs dos calculos
+        if (select_produto.value == "pipoca_chocolate" && select_embalagem.value == "pacote_pequeno") {
+            div_resultado.innerHTML =  `<b>Resumo do Orçamento
+                                            <br><br>
+                                        Quantidade Solicitada:</b>  ${quantidade} <br>
+                                    <b>Embalagem Selecionada:</b>  Pacote Pequeno <br>
+                                    <b>Produto Selecionado:</b>  Pipoca de Chocolate <br>
+                                    <b>O Valor Total das Pipocas é de R$ ${chocolate_peq} </b>`;
+            
+        }
+        else if (select_produto.value == "pipoca_chocolate" && select_embalagem.value == "pacote_grande") {
+            div_resultado.innerHTML =  `<b>Resumo do Orçamento
+                                            <br><br>
+                                        Quantidade Solicitada:</b>  ${quantidade} <br>
+                                    <b>Embalagem Selecionada:</b>  Pacote Grande <br>
+                                    <b>Produto Selecionado:</b>  Pipoca de Chocolate <br>
+                                    <b>O Valor Total das Pipocas é de R$ ${chocolate_gra} </b>`;
+            
+        }
+        else if (select_produto.value == "pipoca_caramelo" && select_embalagem.value == "pacote_pequeno") {
+            div_resultado.innerHTML =  `<b>Resumo do Orçamento
+                                            <br><br>
+                                        Quantidade Solicitada:</b>  ${quantidade} <br>
+                                    <b>Embalagem Selecionada:</b>  Pacote Pequeno <br>
+                                    <b>Produto Selecionado:</b>  Pipoca de Caramelo <br>
+                                    <b>O Valor Total das Pipocas é de R$ ${caramelo_peq} </b>`;
+            
+        }
+        else if (select_produto.value == "pipoca_caramelo" && select_embalagem.value == "pacote_grande") {
+            div_resultado.innerHTML =  `<b>Resumo do Orçamento
+                                            <br><br>
+                                        Quantidade Solicitada:</b>  ${quantidade} <br>
+                                    <b>Embalagem Selecionada:</b>  Pacote Grande <br>
+                                    <b>Produto Selecionado:</b>  Pipoca de Caramelo <br>
+                                    <b>O Valor Total das Pipocas é de R$ ${caramelo_gra} </b>`;
+            
+        }
+
+        botao_orcar.style.display = "none";
+        botao_novo_orcamento.style.display = "block";
+        botao_comprar.style.display = "block";
+    }
+    
+    function bt_novo() {
+        // limpando tudo
+        select_produto.value = '';
+        select_embalagem.value = '';
+        input_quantidade.value = '';
+        input_acucar.value = '';
+
+        div_resultado.innerHTML = '';
+
+        botao_novo_orcamento.style.display = "none";
+        botao_comprar.style.display = "none";
+        botao_orcar.style.display = "block";  
+
+    }
+
+    function bt_comprar() {
+        var rand = (Math.random() * 2 + 3.5).toFixed(1);
+        alert(`PARABÉNS!!! Você recebeu um bônus de ${rand}%, na sua próxima compra você terá um bônus de R$`)
+        
+        // limpando tudo
+        select_produto.value = '';
+        select_embalagem.value = '';
+        input_quantidade.value = '';
+        input_acucar.value = '';
+
+        div_resultado.innerHTML = '';
+
+        botao_novo_orcamento.style.display = "none";
+        botao_comprar.style.display = "none";
+        botao_orcar.style.display = "block";  
+    }
+    
+</script>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Algoritmo - Donilo Jordão</title>
+</head>
+<body>
+    
+    <center>
+
+        <div id="pagina1">
+
+            <h2>Aco Pip – AS MELHORES PIPOCAS DO BRASIL</h2>
+            <h5>Escolha uma pipoca</h5>
+
+            <select id="select_produto" onchange="selectProduto()">
+
+                <option value="">Escolha um produto</option>
+                <option value="pipoca_chocolate">Pipoca com Chocolate</option>
+                <option value="pipoca_caramelo">Pipoca com Caramelo</option>
+
+            </select>
+
+            <select id="select_embalagem" onchange="selectEmbalagem()">
+
+                <option value="">Escolha a embalagem</option>
+                <option value="pacote_pequeno">Pacote Pequeno</option>
+                <option value="pacote_grande">Pacote Grande</option>
+
+            </select>
+            <br><br>
+            <input type="text" id="input_quantidade_solicitada" placeholder="Informe a quantidade desejada"><br>
+            <input type="text" id="input_quantidade_acucar" placeholder="Informe a quantidade de Açúcar">
+            <br><br>
+            <button onclick="fazerOrcamento()">Orçar</button>
+
+        </div>
+    </center>
+        <div id="pagina2">
+
+            <h2>Resumo do Orçamento</h2>
+
+            Quantidade Solicitada: <span id="span_quantidade_solicitada"></span><br>
+            Embalagem Selecionada: <span id="span_embalagem_selecionada"></span><br>
+            Produto Selecionado: <span id="span_produto_selecionado"></span><br><br>
+            O valor total das pipocas é de R$<span id="span_valor_total_pipocas"></span>
+            <span id="span_acucar"></span>
+
+            <br><br>
+            <button onclick="novoOrçamento()">Novo Orçamento</button>
+            <button onclick="comprar()">Comprar</button>
+
+        </div>
+
+    
+    <br><br><br><br><br>
+    <p>Feito por: Donilo Jordão</p>
+    <p>RA: 01212008</p>
+</body>
+</html>
+
+<script>
+
+    var quantidade_solicitada;
+    var quantidade_acucar;
+    var produto;
+    var embalagem;
+    var preco_unitario;
+    var valor_total_pipocas;
+    var adicional_acucar;
+    var numero_sorteado;
+    var bonus;
+
+    function fazerOrcamento(){
+
+        quantidade_solicitada = Number(input_quantidade_solicitada.value);
+        quantidade_acucar = Number(input_quantidade_acucar.value);
+        
+
+        if(quantidade_solicitada >= 500 && quantidade_solicitada <= 5000){
+            if(quantidade_acucar > 0 && quantidade_acucar < 9){
+                irPagina2()
+                setPrecoUnitario()
+                setHTML()
+            } else {
+                alert('Quantidade adicional de açúcar invalida');
+            }
+        } else if(quantidade_solicitada < 500){
+            alert('Vendemos somente no atacado');
+        } else if(quantidade_solicitada > 5000){
+            alert('Consulte nosso PCP (planejamento e controle da produção)');
+        }
+
+
+    }
+
+    function selectEmbalagem(){
+
+        embalagem = select_embalagem.value;
+
+    }
+    function selectProduto(){
+
+        produto = select_produto.value;
+
+    }
+    function irPagina2(){
+
+        //alert('pagina 2')
+        input_quantidade_solicitada.value = ``;
+        input_quantidade_acucar.value = ``;
+        select_embalagem.value = ``;
+        select_produto.value = ``;
+        pagina1.style.display = "none";
+        pagina2.style.display = "block";
+
+
+    }
+
+    function setPrecoUnitario(){
+
+        if(produto == "pipoca_caramelo" && embalagem == "pacote_pequeno"){
+            preco_unitario = 1.10;
+        } else if(produto == "pipoca_chocolate" && embalagem == "pacote_pequeno"){
+            preco_unitario = 1.20;
+        } else if(produto == "pipoca_caramelo" && embalagem == "pacote_grande"){
+            preco_unitario = 1.70;
+        } else if(produto == "pipoca_chocolate" && embalagem == "pacote_grande"){
+            preco_unitario = 1.80;
+        }
+
+
+    }
+
+    function setHTML(){
+
+        valor_total_pipocas = quantidade_solicitada * preco_unitario;
+        span_quantidade_solicitada.innerHTML = `<b>${quantidade_solicitada}</b>`;
+        span_embalagem_selecionada.innerHTML = `<b>${embalagem}</b>`;
+        span_produto_selecionado.innerHTML = `<b>${produto}</b>`;
+        span_valor_total_pipocas.innerHTML = `<b>${(valor_total_pipocas).toFixed(2)}</b>`
+
+        adicional_acucar = valor_total_pipocas * 0.07;
+
+        if(quantidade_acucar > 4){
+            span_acucar.innerHTML = `Para essa quantidade adicional de açúcar será cobrado um adicional de R$<b>${adicional_acucar.toFixed(2)}</b>`
+        }
+
+
+    }
+
+    function novoOrçamento(){
+
+        pagina2.style.display = "none";
+        pagina1.style.display = "block";
+        input_quantidade_solicitada.value = ``;
+        input_quantidade_acucar.value = ``;
+        select_embalagem.value = ``;
+        select_produto.value = ``;
+        quantidade_solicitada = 0;
+        quantidade_acucar = 0;
+        produto = "";
+        embalagem = "";
+        preco_unitario = 0;
+        valor_total_pipocas = 0;
+        adicional_acucar = 0;
+        numero_sorteado = 0;
+        bonus = 0;
+
+
+
+    }
+
+    function comprar(){
+
+        numero_sorteado = (Math.random() * 2 + 3.5).toFixed(1);
+        console.log(valor_total_pipocas)
+        bonus = (numero_sorteado / 100) * valor_total_pipocas;
+        console.log(numero_sorteado)
+        console.log(valor_total_pipocas)
+
+        alert(`PARABÉNS!!! Você recebeu um bônus de ${numero_sorteado}%, na sua próxima compra você terá um bônus de R$ ${bonus.toFixed(2)}`)
+        novoOrçamento()
+    }
+
+
+
+</script>
+
+<style>
+
+#pagina2{
+    display: none;
+}
+
+</style>

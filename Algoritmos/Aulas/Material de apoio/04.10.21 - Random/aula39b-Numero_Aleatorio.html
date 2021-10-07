@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 39b Número Aleatório</title>
+</head>
+
+<body>
+    <h2>Analise os resultados abaixo e diga o que está acontecendo</h2>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <div id="div_result">Resultdo <br></div>
+</body>
+
+</html>
+<script>
+
+    // Math.random() gera aleatoriamente um número >=0 e <1.
+    // cada vez que o comando é executado um número >=0 e <1 é sorteado.
+
+    function sortear() {
+        var ax_num = Math.random();
+        if (ax_num >= 0.5) {
+            div_result.innerHTML += `Para o número sorteado ${ax_num} eu arredondaria para 1 e o toFixed arredondou para ${ax_num.toFixed()} <br>`;
+        } else {
+            div_result.innerHTML += `Para o número sorteado ${ax_num} eu arredondaria para 0 e o toFixed arredondou para ${ax_num.toFixed()} <br>`;
+        }
+    }
+</script>

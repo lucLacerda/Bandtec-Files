@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prova Algoritmos A </title>
+</head>
+<body>
+        <h1> Distruidora Pedeágua </h1>
+        
+        <h2> Orçamento de Vendas </h2>
+
+        <b style="font-size: 20px;" > Água natural </b> <br>
+        Entre com o valor de venda: R$<input id="ipt_venda_nat" type="Number" placeholder="Ex: 2"> <br>
+        Entre com a quantidade desejada: <input id="ipt_qtd_nat" type="Number" placeholder="Ex: 8"> unid. <br>
+
+        <br>
+
+        <b style="font-size: 20px;" > Água com gás </b> <br>
+        Entre com o valor de venda: R$<input id="ipt_venda_gas" type="Number" placeholder="Ex: 3"> <br>
+        Entre com a quantidade desejada: <input id="ipt_qtd_gas" type="Number" placeholder="Ex: 5"> unid. <br>
+        <br><br>
+        <img onclick="carrinho()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0X2R_5A90Wgt1fwFrLamzsMVqwB3khmllHQ&usqp=CAU" alt="Carrinho de Compras" style="height: 40px;">
+        <br>
+        <div id="div_total"></div>
+</body>
+</html>
+    <script>
+        // Para deixar menos volumoso, optei por usar 2 variaveis, onde nelas constam os calculos, e no inner conclui com a resolução   
+        function carrinho(){       
+            var orcamento_nat = `${Number(ipt_venda_nat.value) * Number(ipt_qtd_nat.value)}`;
+            var orcamento_gas = `${Number(ipt_venda_gas.value) * Number(ipt_qtd_gas.value)}`;
+
+            div_total.innerHTML = `Seu orçamento de vendas é de R$${Number(orcamento_nat) + Number(orcamento_gas)}`;
+
+            ipt_venda_nat.value = '';
+            ipt_qtd_nat.value = '';
+
+            ipt_venda_gas.value = '';
+            ipt_qtd_gas.value = '';
+        }
+    </script>

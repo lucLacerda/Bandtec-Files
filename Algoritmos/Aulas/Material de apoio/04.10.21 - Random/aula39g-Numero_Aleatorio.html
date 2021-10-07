@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 39g Número Aleatório</title>
+</head>
+
+<body>
+    <h2>Analise os resultados abaixo e diga o que está acontecendo</h2>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <div id="div_result">Resultdo <br></div>
+</body>
+
+</html>
+<script>
+
+    // Math.random() gera aleatoriamente um número >=0 e <1.
+    // cada vez que o comando é executado um número >=0 e <1 é sorteado.
+
+    function sortear() {
+        var ax_num = Math.random();
+        div_result.innerHTML += `Número sorteado = ${(ax_num)} Número transformado ${ax_num*20-10} O número arredondado  ${(ax_num*20-10).toFixed()} <br> `;
+    }
+</script>
