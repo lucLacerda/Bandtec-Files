@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula 18.10 2 </title>
+</head>
+<body>
+    Informe um numero de 5 á 100: <input id="ipt_numero" type="number" onchange="contar()">
+        <br><br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+    function contar() {
+
+        var numero = ipt_numero.value;
+        var contador = 4;
+
+        resultado.innerHTML = '';
+
+        while (contador < numero)
+        {
+            if (numero % 2 == 0) 
+            {
+                resultado.innerHTML += `${contador} <br>`;
+            }
+
+            contador ++;
+        }
+    }
+
+</script>
