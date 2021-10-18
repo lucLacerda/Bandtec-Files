@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula 18.10 </title>
+</head>
+<body>
+    Informe um numero de 5 á 100: <input id="ipt_numero" type="number" oninput="contar()">
+        <br><br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+
+<script>
+    function contar() {
+
+        var contador = ipt_numero.value;
+        var numero = 4;
+
+        resultado.innerHTML = '';
+
+        if (contador > 1001) {
+            alert('Numero muito grande fera!')
+        }
+            else
+            {
+                while (numero < contador)
+                {
+                    numero ++;
+                    resultado.innerHTML += `${numero} <br>`;
+                }
+            }
+}
+
+</script>
