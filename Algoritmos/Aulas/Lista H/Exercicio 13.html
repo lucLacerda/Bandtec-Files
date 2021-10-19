@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 13 </title>
+</head>
+<body>
+
+        De quantos em quantos dias você faz musculação? <input type="number" id="ipt_number" placeholder="">
+            <br><br>
+        <button onclick="exibir()"> Exibir rotina mensal </button>
+            <br><br>
+        <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    function exibir() {
+        var dia = ipt_number.value;
+        var contagem = 0;
+
+
+        if (dia > 29) {
+            alert('Ta perdendo dinheiro pra academia!')
+        }
+            else
+            {
+                while (contagem < 30)
+                {
+                    if (contagem % dia == 0) {
+                        resultado.innerHTML += `Dia ${contagem + 1} - Musculação <br>`;
+                    } 
+                    else {
+                        resultado.innerHTML += `Dia ${contagem + 1} - Comer, dormir etc <br>`;
+                    }
+ 
+                    contagem ++;
+                }
+            }
+    
+    resultado.innerHTML = '';
+}
+</script>
+
+<!--
+13. Crie um programa em HTML/JS o qual:
+a) Pergunte de quantos em quantos dias o usuário faz musculação (é só uma informação, só 1 número, ok?)
+b) Ao clicar em "Exibir rotina mensal", mostre uma sequência de 30 frases, como neste exemplo:
+
+    Dia 1 - Musculação
+
+    Dia 2 - Comer, dormir etc
+
+    Dia 3 - Comer, dormir etc
+
+    Dia 4 - Musculação
+
+    Dia 5 - Comer, dormir etc
+
+    Dia 6 - Comer, dormir etc
+
+    Dia 7 - Musculação
+
+    ...
+
+    Dia 30 - Comer, dormir etc
+
+O Dia 1 sempre é de "Musculação"
+
+Considere que, nesse exemplo, o usuário informou 3 no item a) -->
