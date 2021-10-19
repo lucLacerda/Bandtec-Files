@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula Freeza </title>
+</head>
+<body>
+    Informe um numero da sorte entre 0 a 100: <input id="ipt_number" type="number" >
+        <br><br>
+    <button onclick="sortear()"> Testar minha sorte </button>
+        <br><br>
+    <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    function sortear() {
+        var contagem = 0;
+        var qtd = ipt_number.value;
+
+        resultado.innerHTML = '';
+    
+
+        while (contagem < 20) {
+
+            
+            rand = (Math.random() * 100).toFixed();
+            resultado.innerHTML = `${rand}`
+            contagem ++;
+                
+                if (rand == qtd) {
+                    alert('Boa carai')
+
+                }
+        }
+        
+        
+    }
+</script>
