@@ -1,0 +1,15 @@
+Regras:
+
+1 Escolha um jogo, sendo retro ou old school
+
+2 Criar no minimo 3 e maximo 5 tabelas
+
+3 Tabelas precisando se relacionar
+
+4 Será contabilizado como tabela também tabelas associativas
+
+5 Busque usar relacionamento forte, fraco, 1 pra 1, 1 pra N
+
+6 Escrever as Regras do Jogo
+
+7 
