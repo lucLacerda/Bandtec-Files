@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 19 </title>
+</head>
+<body>
+    
+    Informe quantos ônibus precisa pegar: <input type="number" id="ipt_onibus">
+        <br><br>
+    Informe quantos trens precisa pegar: <input type="number" id="ipt_trem">
+        <br><br>
+    Informe quantos metrôs precisa pegar: <input type="number" id="ipt_metro">
+        <br><br>
+    <button onclick="calcular()"> #Partiu Trajeto </button>
+
+    <span id="resultado"></span>
+    
+</body>
+</html>
+<script>
+
+    function calcular() {
+        var onibus = ipt_onibus.value;
+        var trem = ipt_trem.value;
+        var metro = ipt_metro.value;
+
+            var contador = 1;
+
+        while (contador <= onibus) {
+                resultado.innerHTML += `<br><br> Pegando o ${contador}º buzão `;
+
+                if(contador == 2) {
+                        resultado.innerHTML += `- Começando a cansar`;
+                    }
+                if(contador == 3) {
+                        resultado.innerHTML += `- Já cansado!`;
+                    }
+                    
+            contador ++;
+        }
+
+            var contador = 1;
+
+        while (contador <= trem) {
+                resultado.innerHTML += `<br><br> Pegando o ${contador}º trem `;
+
+                if(contador == 2) {
+                        resultado.innerHTML += `- Começando a cansar`;
+                    }
+                if(contador == 3) {
+                        resultado.innerHTML += `- Já cansado!`;
+                    }
+                    
+            contador ++;
+        }
+
+        var contador = 1;
+
+        while (contador <= metro) {
+                resultado.innerHTML += `<br><br> Pegando o ${contador}º metrô `;
+
+                if(contador == 2) {
+                        resultado.innerHTML += `- Começando a cansar`;
+                    }
+                if(contador == 3) {
+                        resultado.innerHTML += `- Já cansado!`;
+                    }
+                    
+            contador ++;
+        }
+    }
+
+</script>
+
+<!-- 
+19. Incremente a questão anterior.
+
+a) Na 2ª vez que estiver em determinado meio de transporte, exiba do lada frase o texto "Começando a cansar"
+
+b) A partir da 3ª vez que estiver em determinado meio de transporte, exiba do lada frase o texto "Já cansado!" 
+-->

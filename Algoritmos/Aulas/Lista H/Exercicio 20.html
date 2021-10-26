@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 20 </title>
+</head>
+<body>
+
+    <button onclick="calcular()"> Curto 3 e 5 </button>
+        <br><br>
+    <span id="resultado"></span>
+    
+</body>
+</html>
+<script>
+
+    function calcular() {
+        var maximo = 100;
+        var contador = 0;
+
+        while (contador <= maximo) {
+            
+                if (contador % 3 == 0 && contador % 5 == 0) {
+                resultado.innerHTML += ` É TRI! É PENTA! <br>`
+                }
+
+                else if (contador % 3 == 0) {
+                resultado.innerHTML += ` É TRI! <br>`
+                }
+
+                else if (contador % 5 == 0) {
+                resultado.innerHTML += ` É PENTA! <br>`
+                } 
+
+                else {
+                resultado.innerHTML += `${contador} <br>`;
+                }
+
+            contador ++;
+
+        }
+
+    }
+
+</script>
+
+<!-- 
+20 (desafio). Crie um programa em HTML/JS o qual:
+
+a) Deve ter um botão chamado "Curto 3 e 5!"
+
+b) Ao clicar nesse botão, devem aparecer QUASE todos os números entre 0 e 100, porém...
+
+c) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!".
+
+#Ficadica: Use a técnica de dedução de múltiplos por uso do resto da divisão
+
+-->
