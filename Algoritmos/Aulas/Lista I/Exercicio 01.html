@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 01 </title>
+</head>
+<body>
+
+    <input id="ipt_fruta" onchange="pesquisar()" type="text" placeholder="Digite sua fruta">
+        <br><br>
+
+    <input id="ipt_adicionar" onchange="pesquisar()" type="text" placeholder="Inclua sua fruta na lista" style="display: none;">
+        <br>
+    <button id="bt_adicionar" onclick="bt_adicionar()" style="display: none;"> Adicionar </button>
+
+    <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    var frutas = ['mamao', 'abacaxi', 'pera', 'uva', 'maça']
+
+    function pesquisar() { 
+        
+        if (frutas.indexOf(ipt_fruta.value) == -1) {
+            resultado.innerHTML = `Não existe a fruta ${ipt_fruta.value} na lista`
+            ipt_adicionar.style.display = 'block'
+            bt_adicionar.style.display = 'block'
+        }
+        else {
+            resultado.innerHTML = `A fruta ${ipt_fruta.value} existe na lista` 
+
+        }
+        
+        ipt_fruta.value = '';
+    }  
+
+    function bt_adicionar() {
+        frutas.push(ipt_adicionar.value);
+        ipt_adicionar.value = '';
+    }
+
+</script>
+
+<!-- 
+    1. Crie um Programa em HTML o qual:
+
+a) Tenha uma lista de frutas a qual o usuário não vê
+
+b) Tenha na tela um campo na qual o usuário digita o nome de uma fruta e um botão "Pesquisar"
+
+c) Ao clicar nesse botão, o programa busca essa fruta na lista. Se achar, exibe um texto abaixo com uma frase como esta:
+
+            A fruta X existe na lista
+
+d) Caso a fruta pesquisada não exista, exiba:
+
+            Não existe a fruta X na lista
+
+#ficaadica – para criar um vetor com conteúdo, separe cada elemento com virgula, p.e.  
+
+var vt_alunos = [“Paulo”, “Ana”, “João”];
+ -->

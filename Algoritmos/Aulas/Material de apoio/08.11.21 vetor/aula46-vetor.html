@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 46 Vetor</title>
+</head>
+<body>
+    
+    <input placeholder="Informe uma fruta" id="ipt_fruta">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="mostrar()">Mostrar o Resultado</button>
+
+    <div id="div_pesquisa"></div>
+
+</body>
+</html>
+<script>
+    // Vetor ou Array é uma variável espepecial, em um vetor nós podemos
+    // armazenar vários valores dentro de uma variável
+    // 
+    // Para criar um vetor nós usaremos um par de colchetes 
+    // 
+    // Para separar os valores contidos no vetor nós usamos a , virgula
+    //
+    // Abaixo criamos um VETOR chamado 'frutas', esse vetor está vazio
+    var frutas = []; 
+
+    function cadastrar() {
+        // O método ".push()" insere uma nova ocorrência no final do vetor
+        frutas.push(ipt_fruta.value);
+        ipt_fruta.value = '';
+    }
+
+    function mostrar() {
+        // Se eu mostrar o vetor será apresentada todas ocorrencias separadas por virgula
+        //
+        // A propriedade ".length" retorna a quantidade de elementos do vetor
+        //
+        // Eu posso referenciar um vetor por um indice, lembrando que 
+        //          o primeiro indice de um vetor é 0
+        div_pesquisa.innerHTML = `O meu vetor está assim : ${frutas} <br>`;            
+        div_pesquisa.innerHTML += `A qtde. de ocorrência é: ${frutas.length}<br>`;            
+        div_pesquisa.innerHTML += `A Primeira ocorrência é: ${frutas[0]}<br>`;            
+        div_pesquisa.innerHTML += `A Última ocorrência é: ${frutas[frutas.length-1]}<br><br>`;            
+        
+
+
+        // Eu posso inserir uma ocorrencia no final com o "[vetor.length]"
+        //
+        // Eu posso alterar o conteúdo de uma ocorrencia informando o indice desse elemento
+        // 
+        // Eu posso inserir uma ocorrencia em uma determinada posição informando o indice,
+        //      CUIDADO ISSO PODE DEIXAR BURACOS NO VETOR!!!!
+        frutas[frutas.length] = "abacaxi";
+        frutas[1] = "frizza";
+        frutas[9] = 'claudio';
+        div_pesquisa.innerHTML += `O meu vetor ficou assim: ${frutas} e a quantidade de 
+            ocorrências é: ${frutas.length}<br><br>`; 
+
+
+
+        //Eu posso eliminar o conteúdo de uma ocorrência, repare que a ocorrência permanece 
+        //       com conteúdo vazio
+        delete frutas[1];           
+        div_pesquisa.innerHTML += `Vetor sem conteúdo na 2ª ocorr: ${frutas} e a quantidade de 
+            ocorrências é: ${frutas.length}<br><br>`; 
+        
+        
+
+        // O método ".sort()" classifica os elementos de um vetor
+        frutas.sort();
+        div_pesquisa.innerHTML += `O meu vetor sorteado : ${frutas} e a quantidade de ocorrências é: ${frutas.length}<br><br>`; 
+        
+
+
+        // o método ".indexOf()" procura dentro do vetor qual a 1ª ocorrência que atende o 
+        //     Critério de pesquisa
+        div_pesquisa.innerHTML += `A ocorrência da pera é: ${frutas.indexOf("pera")}`;  
+
+    }
+    //
+    // RECOMENDO FORTEMENTE INSERIR OCORRÊNCIAS COM O MÉTODO .push()
+    //
+</script>
