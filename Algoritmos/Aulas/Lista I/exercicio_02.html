@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Exercício 02</h3>
+
+    Destino de viagem:
+    <input type="text" id="inp_viagem" placeholder="Destino de viagem">
+    <br><br>
+
+    <button onclick="adicionar()">Adicionar</button>
+    <br><br>
+
+    Verificar as viagem <br><br>
+    
+    <button onclick="primeiro()">Primeira viagem</button>
+    
+    <button onclick="terceira()">Terceira viagem</button>
+
+    <button onclick="ultima()">Última viagem</button>
+
+    <br><br>
+
+    <span id="span_text"></span>
+
+</body>
+</html>
+<script>
+
+    var viagem = [];
+
+    function adicionar() {
+        viagem.push(inp_viagem.value);
+        inp_viagem.value = ``;
+    }
+
+    function primeiro() {
+        
+        if (viagem.indexOf(inp_viagem.value) == 0) {
+            span_text.innerHTML = `ainda não viajou`;
+        }else{
+            span_text.innerHTML = `Seu primeiro local ${viagem[0]}`;
+        }
+    }
+
+    function terceira() {
+        
+        if (viagem.indexOf(inp_viagem.value) == 2) {
+            span_text.innerHTML = `ainda fez a 3ª viagem`;
+        }else{
+            span_text.innerHTML = `Seu terceiro local ${viagem[2]}`;
+        }
+    }
+
+    function ultima() {
+        
+        if (viagem.indexOf(inp_viagem.value) == [viagem.length-1]) {
+            span_text.innerHTML = `ainda não viajou :(`;
+        }else{
+            span_text.innerHTML = `Sua ultima viagem ${viagem[viagem.length-1]}`;
+        }
+    }
+
+</script>
