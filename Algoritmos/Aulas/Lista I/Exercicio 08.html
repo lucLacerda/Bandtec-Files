@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 08 </title>
+</head>
+<body>
+
+    <h2> Bandtec Digital School </h2>
+
+        Informe o nome dos alunos:
+        <input type="text" id="ipt_aluno" placeholder="Apenas 1 por vez">
+            <button onclick="cadastrar()"> Cadastrar aluno </button>
+                <br><br>
+
+        <span id="resultado"></span>
+    
+</body>
+</html>
+<script>
+    var alunos = [];
+
+    function cadastrar() {
+        alunos.push(ipt_aluno.value);
+        ipt_aluno.value = ``; 
+
+        resultado.innerHTML = ``;
+        
+        for (var cont = alunos.length -1; cont >= 0; cont--) {
+            resultado.innerHTML += `${alunos[cont]} <br>`;
+            
+        }
+
+    }
+</script>
+<!-- 
+    8. Crie um programa no qual o usuário vai cadastrando nomes de alunos.
+
+Porém, na medida que vai cadastrando, ele vai aparecendo um abaixo do outro na ordem inversa em que foram cadastrados (ou seja, o último sempre fica no topo, o penúltimo em abaixo dele e assim por diante).
+ -->

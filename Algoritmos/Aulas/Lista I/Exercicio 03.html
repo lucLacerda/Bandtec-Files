@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 03 </title>
+</head>
+<body>
+    
+    <h3>Exercício 03</h3>
+
+    Informe os bairros onde você já morou:
+        <input type="text" id="ipt_bairro" placeholder="Apenas 1 por vez">
+            <button onclick="cadastrar()"> Cadastrar bairro </button>
+            <br><br>     
+        <span id="resultado"></span>
+            <br><br>
+
+    Informe um numero:
+        <input id="ipt_numero" type="number">
+            <button onclick="relembrar()"> Relembrar infância </button>
+
+            <br><br>
+
+        <span id="text"></span>
+
+            
+
+</body>
+</html>
+<script>
+
+    var bairros = [];
+
+    function cadastrar() {
+        bairros.push(ipt_bairro.value);
+        ipt_bairro.value = ``;
+    }
+
+    function relembrar() {
+
+        var numero = ipt_numero.value;
+        
+        
+        if (bairros.length < numero) {
+
+            text.innerHTML = `Você ainda não morou num ${ipt_numero.value}º bairro! <br>`;
+            resultado.innerHTML = ``;
+        }
+
+        else {
+            
+            resultado.innerHTML = `Você morou em: ${bairros[ipt_numero.value - 1]}`;
+
+
+        }
+    }
+
+
+</script>
+
+<!-- 
+    3. Crie um programa onde o usuário vá cadastrando os bairros para onde já morou. Ele digita o nome do lugar e vai clicar em "Cadastrar bairro".
+
+Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde morou, a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em "Relembrar moradia". Se ele informar 1, exiba o primeiro bairro cadastrado e assim por diante.
+
+Porém, se ele informar um número maior do que a quantidade de bairros, exiba: "Você ainda não morou num Xº bairro!"
+ -->
