@@ -63,15 +63,16 @@
                         <input id="email_input" type="text" placeholder="meuemail@provedor.com">
                         <br>
                         <br>
+                        Cor favorita:
+                        <br>
+                        <input id="cor_favorita" type="text" placeholder="azul">
+                        <br>
+                        <br>
                         Senha:
                         <br>
                         <input id="senha_input" type="password" placeholder="******">
                         <br>
                         <br>
-                        Cor favorita:
-                        <br>
-                        <input id="cor_favorita" type="text" placeholder="azul">
-                        <br><br>
                         Confirmação da Senha:
                         <br>
                         <input id="confirmacao_senha_input" type="password" placeholder="******">
@@ -155,7 +156,8 @@
             body: JSON.stringify({
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                corServer: corVar
             })
         }).then(function (resposta) {
 
