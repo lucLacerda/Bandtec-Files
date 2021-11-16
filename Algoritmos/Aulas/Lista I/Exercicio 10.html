@@ -13,8 +13,9 @@
         <input type="text" id="ipt_bus" placeholder="Apenas 1 por vez">
             <button onclick="gravar()"> Gravar buzão </button>
                 <br><br>
-        <input type="text" id="ipt_pesquisa" placeholder="Apenas 1 por vez">
-
+    Informe qual ônibus quer se lembrar:
+        <input oninput="lembrar()" type="text" id="ipt_pesquisa" placeholder="Apenas 1 por vez">
+            <br><br>
         <span id="resultado"></span>
 </body>
 </html>
@@ -24,18 +25,35 @@
     function gravar() {
         busao.push(ipt_bus.value);
         ipt_bus.value = ``; 
-
         resultado.innerHTML = ``;
         
-        for (var cont = 0; cont < busao.length; cont++) {
+        for (var cont = busao.length -1; cont >= 0; cont--) {
             resultado.innerHTML += `${busao[cont]} <br>`;
+
+        }
+    }
+    
+    function lembrar (){
+        resultado.innerHTML = ''
+        var cont = 1
+        if (busao.indexOf(ipt_pesquisa.value) == -1) {
+            
+            resultado.innerHTML += `Você nunca pegou a linha ${ipt_pesquisa.value} <br>`
+
+        } else {
+
+            var pesquisa = ""
+
+            for (var index = 0; index <= busao.length -1 ; index ++) {
+                if (ipt_pesquisa.value == busao[index]){
+                    pesquisa += `${index + 1}, `;
+
+                    resultado.innerHTML = `Você já pegou o onibus ${cont ++} vezes, na ordem: ${pesquisa}`
+                }
+
+            }
             
         }
-
-        if (busao.indexOf(ipt_pesquisa.value) == -1){
-            resultado.innerHTML = 'tu nunca pegou sapoha'
-        }
-
     }
 </script>
 

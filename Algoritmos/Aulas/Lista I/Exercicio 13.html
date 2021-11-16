@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 13 </title>
+</head>
+<body>
+    Selecione o Resultado:
+    <select id="combo_resultado">
+        <option value="">Selecione o resultado</option>
+        <option value="Vitoria">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+        <br><br>
+    <button onclick="registrar()">Registrar Jogo</button>
+        <br><br>
+    <div id="resultado"></div>
+    
+</body>
+</html>
+<script>
+    var jogos = [];
+
+    function registrar() { 
+        jogos.push(combo_resultado.value);
+            console.log(jogos)
+
+        resultado.innerHTML =` O time teve: V vitórias, E empates, D derrotas
+                               Pontuação total: X pontos
+                               Aproveitamento: Y% `
+    }
+</script>
+
+<!-- 
+
+13 (desafio). Crie um programa em HTML/JS o qual cadastre a campanha de um time de futebol num campeonato da seguinte forma:
+
+a) Tenha um 'combo' identificado com o texto "Indique o resultado" com os itens:
+
+            Vitória
+
+            Empate
+
+            Derrota
+
+b) Ao clicar num botão "Registrar jogo", o resultado escolhido em a) é registrado em um local invisível ao usuário e um texto abaixo é exibido (ou atualizado). O texto é como este:
+
+      O time teve: V vitórias, E empates, D derrotas
+
+      Pontuação total: X pontos
+
+      Aproveitamento: Y%
+
+Onde X é calculado assim: Cada vitória (V) vale 3 pontos. Cada empate (E) vale 1 ponto. Cada derrota (D) vale 0 pontos.
+
+O Y é o total de pontos conquistados (X) dividido pelo total de pontos possíveis (ou seja, considerando que tivesse vencido todos os jogos) vezes 100.
+
+ 
+
+c) Deve haver um campo "Indique qual jogo quer saber o resultado". Na medida que vai digitando, aparece um texto, abaixo do texto de b) como este:
+
+            No 2º jogo, o time Ganhou (ou "Perdeu" ou "Empatou")
+
+ou um texto como este, caso o valor seja de um jogo que não foi cadastrado:
+
+            Não foi cadastrado um 9º jogo
+
+Neste item considere que o usuário ache que 1 indica o 1º jogo. Ou seja, o usuário não imagina que o 1º é o jogo "0" na verdade.
+ -->
