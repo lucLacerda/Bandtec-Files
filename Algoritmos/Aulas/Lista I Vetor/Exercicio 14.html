@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="ipt_produto" placeholder="Nome do produto">
+        <br><br>
+    <input type="number" name="" id="ipt_preco" placeholder="Preço de compra">
+        <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+        <br>
+    <button onclick="relatorio()">Relatorio de Estoque</button>
+
+    <span id="resultado" style="display: none;">
+        Total de produtos: <span id="total" ></span>
+        <br><br><br>
+            <span id="resultado_produtos" ></span> Produto <span id="ordem_produto"></span>: <span id="nome_produto"></span>
+    </span>
+</body>
+</html>
+<script>
+    var produto = [];
+    var preco = [];
+
+    function cadastrar() {
+        produto.push(ipt_produto.value)
+        preco.push(ipt_preco.value)
+
+        ipt_preco.value = '';
+        ipt_produto.value = '';
+
+    }
+
+    function relatorio() {
+        resultado.style.display = 'block';
+
+        total.innerHTML = `${produto.length}`;
+
+        for (let index = 0; index < produto.length; index ++) {
+            resultado_produtos.innerHTML = ``
+            ordem_produto.innerHTML = `produto[${index}]`;;
+        }
+        
+
+    }
+</script>
+<!-- 14. Crie um pequeno sistema de loja eletrônica o qual:
+
+a) Tenha um campo "Nome do produto" e outro "Preço de compra"
+
+b) Tenha um botão "Cadastrar". Ao clicar nele, o nome e preço ficam cadastrados em algum lugar, por enquanto invisível ao usuário
+
+c) Tenha um botão "Relatório de estoque". Ao clicar nele, deve aparecer uma listagem dos produtos cadastrados com seu valor para venda, como no exemplo a seguir:
+
+ 
+
+   Total de produtos: 2
+
+ 
+
+   Produto 1: Leite de arroz
+
+   Preço de compra: R$1.50. Vender por R$1,87
+
+ 
+
+   Produto 2: Caixa de chocolates
+
+   Preço de compra: R$9.00. Vender por R$11,25
+
+ 
+
+O preço de venda é sempre o valor da compra mais 25%. Ou seja, basta multiplicar o preço de compra por 1,25.
+
+ 
+
+#FicaDica: De repente você pode precisar de 2 vetores aqui ;) -->

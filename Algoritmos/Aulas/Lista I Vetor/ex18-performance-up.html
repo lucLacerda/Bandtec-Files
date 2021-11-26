@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance</title>
+  <style>
+    * {
+      color: #D8918F;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #registro,
+    #pesquisa {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border: 1px solid #212121;
+      height: max-content;
+      width: max-content;
+      padding: 20px;
+    }
+
+    input {
+      border: 1px solid #D8918F;
+      height: 20px;
+      margin-bottom: 20px;
+    }
+
+    input:focus {
+      border: 2px solid #D8918F;
+    }
+
+    input::placeholder {
+      color: #D9BD69;
+      padding-left: 5px;
+    }
+
+    #pesquisa input {
+      width: 10ch;
+      margin: 0 10px;
+    }
+
+    button {
+      background-color: #fff;
+      padding: 2px 10px;
+      border-radius: 5px;
+      border: 1px solid #D8918F;
+      margin-right: 20px;
+      color: #C0895B;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="registro">
+    <h1>Análise de performance de Alunos - Registro</h1>
+    <div>
+      <label for="ipt_nome">Entre com o Nome do aluno </label>
+      <input type="text" id="ipt_nome" />
+    </div>
+    <div>
+      <label for="ipt_nota">Entre com a Nota da AC1 do Aluno</label>
+      <input type="text" id="ipt_nota_1" />
+    </div>
+    <div>
+      <label for="ipt_nota">Entre com a Nota da AC2 do Aluno</label>
+      <input type="text" id="ipt_nota_2" />
+    </div>
+    <div>
+      <label for="ipt_nota">Entre com a Nota da AC3 do Aluno</label>
+      <input type="text" id="ipt_nota_3" />
+    </div>
+    <div>
+      <button onclick="registrar()"> Registrar</button>
+      <button onclick="analisar()"> Analisar </button>
+    </div>
+    <div id="result"></div>
+  </div>
+  <div id="pesquisa" style="display:none;">
+    <h1>Análise de performance de Alunos - Pesquisa</h1>
+    Entre com o intervalo de notas
+    <input type="text" id="ipt_de" placeholder="de" maxlength="2">
+    <input type="text" id="ipt_ate" placeholder="até" maxlength="2">
+    <br><br>
+    Pesquisar todas as AC's <button onclick="pesquisarACS()">Pesquisar</button>
+    <br><br>
+
+    Pesquisar por AC
+    <select id="cbo_ac">
+      <option value="1" selected>AC1</option>
+      <option value="2">AC2</option>
+      <option value="3">AC3</option>
+    </select>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br>
+    <br>
+    <div id="result_pesquisa"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  var alunos = [];
+  var notas = [];
+
+  function registrar() {
+    if (ipt_nome.value == '') {
+      alert('Por favor preencha o campo Nome');
+      ipt_nome.focus();
+      ipt_nome.value = '';
+    } else if (ipt_nota_1.value < 0 || ipt_nota_1.value > 10) {
+      alert('Entre com a nota do aluno, o valor deve estar entre 0 e 10');
+      ipt_nota_1.focus();
+      ipt_nota_1.value = '';
+    } else if (ipt_nota_2.value < 0 || ipt_nota_2.value > 10) {
+      alert('Entre com a nota do aluno, o valor deve estar entre 0 e 10');
+      ipt_nota_2.focus();
+      ipt_nota_2.value = '';
+    } else if (ipt_nota_3.value < 0 || ipt_nota_3.value > 10) {
+      alert('Entre com a nota do aluno, o valor deve estar entre 0 e 10');
+      ipt_nota_3.focus();
+      ipt_nota_3.value = '';
+    } else {
+      alunos.push(ipt_nome.value);
+      notas.push(+ipt_nota_1.value, +ipt_nota_2.value, +ipt_nota_3.value);
+      result.innerHTML = '';
+      ipt_nome.value = '';
+      ipt_nota_1.value = '';
+      ipt_nota_2.value = '';
+      ipt_nota_3.value = '';
+      var counter = 3;
+      var alunoCounter = alunos.length;
+      for (var i = notas.length; i > 0; i--) {
+        if (counter == 0) {
+          alunoCounter--
+          counter = 3;
+        }
+        result.innerHTML += `<br>${alunos[alunoCounter - 1]} - Nota AC${counter--}: ${notas[i - 1]}`;
+      }
+    }
+  }
+
+  function analisar() {
+    registro.style.display = 'none';
+    pesquisa.style.display = 'block';
+  }
+
+  function pesquisarACS() {
+    var maiornota = 0;
+    var menornota = 11;
+    var somanotas = 0;
+    if (+ipt_de.value < 0 || +ipt_de.value > 10) {
+      alert('O campo "de" deve receber um valor de 0 a 10')
+    } else if (+ipt_ate.value < 0 || +ipt_ate.value > 10) {
+      alert('O campo "até" deve receber um valor de 0 a 10')
+    } else if (+ipt_de.value > +ipt_ate.value) {
+      alert('O campo "de" deve ser menor que o campo "até"')
+    } else {
+      result_pesquisa.innerHTML = '';
+      //contagem de alunos que se enquadram no filtro;
+      var counter = 0;
+      var alunoCounter = 0;
+      var acAtual = 1;
+      for (var index = 0; index < notas.length; index++) {
+        somanotas += +notas[index];
+
+        if (+notas[index] < menornota) {
+          menornota = +notas[index];
+        }
+
+        if (+notas[index] > maiornota) {
+          maiornota = +notas[index];
+        }
+
+        if (index != 0 && index % 3 == 0) {
+          alunoCounter++
+        }
+
+        if (acAtual == 4) {
+          acAtual = 1;
+        }
+
+        if (+notas[index] >= +ipt_de.value && +notas[index] <= +ipt_ate.value) {
+          counter++;
+          result_pesquisa.innerHTML +=
+            `O aluno(a) ${alunos[alunoCounter]} ficou com a nota ${notas[index]} na AC${acAtual}<br>`;
+        }
+        acAtual++
+      }
+
+      result_pesquisa.innerHTML += `
+        Total de alunos registrados: ${alunos.length}
+        <br>
+        Total de alunos listado: ${counter} (com nota no intervalo informado)
+        <br>
+        Maior Nota: ${maiornota}
+        <br>
+        Menor Nota: ${menornota}
+        <br>
+        Média da Nota: ${(somanotas / notas.length).toFixed(2)}
+      `
+    }
+
+
+  }
+
+  function pesquisar() {
+    var maiornota = 0;
+    var menornota = 11;
+    var somanotas = 0;
+    if (+ipt_de.value < 0 || +ipt_de.value > 10) {
+      alert('O campo "de" deve receber um valor de 0 a 10')
+    } else if (+ipt_ate.value < 0 || +ipt_ate.value > 10) {
+      alert('O campo "até" deve receber um valor de 0 a 10')
+    } else if (+ipt_de.value > +ipt_ate.value) {
+      alert('O campo "de" deve ser menor que o campo "até"')
+    } else {
+      result_pesquisa.innerHTML = '';
+      //contagem de alunos que se enquadram no filtro;
+      var counter = 0;
+      var alunoCounter = 0;
+      var acAtual = 1
+      for (var index = 0; index < notas.length; index++) {
+        somanotas += +notas[index];
+
+        if (+notas[index] < menornota) {
+          menornota = +notas[index];
+        }
+
+        if (+notas[index] > maiornota) {
+          maiornota = +notas[index];
+        }
+
+        if (+notas[index] >= +ipt_de.value && +notas[index] <= +ipt_ate.value) {
+          console.log('nota index', index)
+          if (acAtual == 4) {
+            acAtual = 1;
+          }
+
+          // if (index != 0 && index % 3 == 0) {
+          //   alunoCounter++
+          // }
+          console.log('acAtual == cbo_ac.value', acAtual, cbo_ac.value, alunos[alunoCounter])
+          if (acAtual == cbo_ac.value) {
+
+            result_pesquisa.innerHTML +=
+              `O aluno(a) ${alunos[alunoCounter++]} ficou com a nota ${notas[index]} na AC${acAtual}<br>`;
+          }
+          acAtual++
+        }
+      }
+
+      result_pesquisa.innerHTML += `
+        Total de alunos registrados: ${alunos.length}
+        <br>
+        Total de alunos listado: ${counter} (com nota no intervalo informado)
+        <br>
+        Maior Nota: ${maiornota}
+        <br>
+        Menor Nota: ${menornota}
+        <br>
+        Média da Nota: ${(somanotas / notas.length).toFixed(2)}
+      `
+    }
+  }
+</script>
+<!-- 18.    Faça um ajuste no programa anterior para que a Prof. Alice possa:
+
+a.    Na parte-1 cadastrar as notas das três Avaliações Continuadas;
+
+b.    Na parte-2 tenha dois botões, sendo que:
+
+i.    O primeiro botão irá fazer a pesquisa em todas as notas informadas (AC-1, AC-2 ou AC-3);
+
+ii.    O segundo botão irá fazer a pesquisa em somente uma das notas, que será informada pela Prof. Alice em mais um campo que deverá estar nessa página. -->

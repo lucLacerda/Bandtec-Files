@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 3</title>
+</head>
+<body>
+
+    <h1> Controle de Reembolso de Despesas com Locomoção </h1>
+
+    Entre com o valor do Reembolso: R$<input id="input_valor_reembolso" type="number"><button onclick="cadastrar()">Cadastrar</button>
+        <br><br>
+    <b>Total de Reembolsos cadastrados = <span id="span_total_cadastrados">0</span></b>
+
+        <br><br>
+
+
+        <br><br><br><br>
+    
+    <h1>Consulta dos Reembolsos</h1>
+
+    <b>Entre com o intervalo de valores a ser pesquisado:</b>
+        <br>
+    de: <input id="input_intervalo_inicial" type="number"> até: <input id="input_intervalo_final" type="number"> <button onclick="resumir()">Resumir intervalo</button>
+
+    <div id="resultado_intervalo"></div>
+
+
+
+</body>
+</html>
+<script>
+
+    var reembolso = [];
+    var teste = [];
+
+    function cadastrar() {
+        var valor_reembolso = input_valor_reembolso.value;
+
+        
+    if (valor_reembolso > 4 && valor_reembolso < 16) {
+        reembolso.push(valor_reembolso);
+        console.log(reembolso);
+        span_total_cadastrados.innerHTML = `${reembolso.length}`;
+
+    } else {
+        alert('O valor a ser cadastrado tem que estar entre R$ 4,00 e R$ 16,00')
+    
+    }
+}
+
+    function resumir() {
+        var inicial = input_intervalo_inicial.value;
+        var final = input_intervalo_final.value;
+        resultado_intervalo.innerHTML = '';
+        if (inicial >= 4 && inicial <= 16  &&  final <= 16 && final >= 4) {
+            console.log('tudo ok')
+
+            for (var i = reembolso.length; i > 0; i--) {
+                if(reembolso[i] <= inicial && reembolso[i] <= final) {
+                    resultado_intervalo.innerHTML += `<br> R$ ${reembolso[i]} `;
+                }
+
+            }
+
+        }  else {
+            console.log('Verifique os valores digitados')
+        }
+
+        
+
+}
+
+
+</script>

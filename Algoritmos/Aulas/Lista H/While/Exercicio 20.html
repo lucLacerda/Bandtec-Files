@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Exercicio 20 </title>
 </head>
+
 <body>
 
     <button onclick="calcular()"> Curto 3 e 5 </button>
         <br><br>
     <span id="resultado"></span>
-    
+
 </body>
+
 </html>
 <script>
 
@@ -21,24 +24,24 @@
         var contador = 0;
 
         while (contador <= maximo) {
-            
-                if (contador % 3 == 0 && contador % 5 == 0) {
+
+            if (contador % 3 == 0 && contador % 5 == 0) {
                 resultado.innerHTML += ` É TRI! É PENTA! <br>`
-                }
+            }
 
-                else if (contador % 3 == 0) {
+            else if (contador % 3 == 0) {
                 resultado.innerHTML += ` É TRI! <br>`
-                }
+            }
 
-                else if (contador % 5 == 0) {
+            else if (contador % 5 == 0) {
                 resultado.innerHTML += ` É PENTA! <br>`
-                } 
+            }
 
-                else {
+            else {
                 resultado.innerHTML += `${contador} <br>`;
-                }
+            }
 
-            contador ++;
+            contador++;
 
         }
 

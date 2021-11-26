@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 12 </title>
+</head>
+<body>
+
+    <h1>Particular x Publica</h1>
+    Informe o nome dos seus filhos:
+        <input id="input_filhos"  type="text"><br>
+    
+    <button onclick="cadastrar()">Cadastrar</button>
+        <br><br>
+    <button onclick="atualizarFamilia()">Atualizar Família</button>
+
+    <div id="box1" style="display: none">
+
+        <p>Você tem <span id="qtd_filhos"></span> filhos.</p>
+            <p>Seu custo mensal será de aproximadamente R$
+                <b id="resultado_particular"></b> se colocar em escola particular ou R$
+            <b id="resultado_publica"></b> se eles estudarem em escola pública.</p>
+    </div>
+
+</body>
+</html>
+<script>
+    
+var filhos = []
+
+function cadastrar(){
+
+    if(filhos.indexOf(input_filhos.value) != -1){
+        alert("Não pode mais de 1 filho com o mesmo nome!")
+    } else {
+        filhos.push(input_filhos.value)
+    }
+    input_filhos.value = ``;
+    console.log(filhos)
+    
+}
+
+function atualizarFamilia(){
+
+    var publico = filhos.length * 1500;
+    var particular = filhos.length * 3000;
+
+    box1.style.display = 'block'
+    resultado_particular.innerHTML = `${particular.toFixed(2)}`;
+    resultado_publica.innerHTML = `${publico.toFixed(2)}`;
+    qtd_filhos.innerHTML = `${filhos.length}`;
+
+}
+</script>
+
+<!-- 
+
+12. Crie um programa em HTML/JS o qual:
+
+a) Pergunte ao usuário o nome de um filho seu
+
+b) Ao clicar em "Cadastrar", o nome do filho fica cadastrado num lugar que o usuário não vê, porém NÃO permita o cadastro de nomes repetidos. Em caso de tentativa de nome repetido, exiba um alert com a frase "Não pode mais de 1 filho com o mesmo nome!"
+
+c) Ao clicar em "Atualizar Família", deve aparecer um texto como este abaixo:
+
+   Você tem X filhos
+
+   Seu custo mensal será aproximadamente R$Y se colocar eles em escola particular ou R$Z se eles estudarem em escola pública
+
+Onde X é a quantidade de filhos cadastrados.
+
+Y é o resultado do seguinte cálculo: quant de filhos x 3000, com 2 casas decimais.
+
+Z é o resultado do seguinte cálculo: quant de filhos x 1500, com 2 casas decimais.
+ -->

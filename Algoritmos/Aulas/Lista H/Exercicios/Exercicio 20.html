@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 20 </title>
+</head>
+<body>
+
+    <button onclick="sorte()">Ver minha sorte</button>
+
+    <div id="imagem"></div>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
+<script>
+    function sorte() {
+        var carta = 0;
+        var coracao = 0;
+
+        imagem.innerHTML = '';
+
+        for (var cont = 0; cont < 21; cont++) {
+            
+            var aleatorio = Number((Math.random()).toFixed(0));
+                
+                if (aleatorio == 0) {
+                    imagem.innerHTML += `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAADcCAMAAAAshD+zAAAAkFBMVEX/Bwf/////7e3/GRn/DAz/29v/g4P/ERH/PDz/Kir/8vL/5OT/9/f/+/v/FRX/r6//e3v/YGD/Zmb/k5P/SEj/JCT/MDD/wMD/zs7/cnL/2dn/09P/amr/Wlr/u7v/39//QUH/pqb/T0//mpr/i4v/6Oj/ICD/ODj/fX3/x8f/S0v/tLT/oaH/XV3/q6v/cHB5FwsWAAAHlklEQVR4nO2diVrqOhCASSk7HHZF2VFE1Kvv/3YXD6cKTSbrTNLw9X+AND+lnUmTTCrshqmE7gAlpVyslHKxUsrFSikXK6VcrJRysVLKxUopFyulXKxYynXn/XF9sBgul6PFYNw/Jri9So798WAxWi6Hi0F93J937Zoxl2uvXifTSp7prr6y7MI13dXr7oVvfvK6ahu3ZSh3HDRT7soZ6eR5bdyBK9bPG0nzzcHMrDkTuVq9BV45ozm2/ocm46ay+Va9ZtCivlx/o7z0Xxojw9/3zGzU0Gt/844t19ve6V36fP17U7XjzqD51ljz6daT2/JvEDlvRndvNjFsfrpFk5tvDK/9zXCvq5Y8wC8RkM0cRa79ZXHtE9UPPbenP1bNpw/q0KCUm6nfkBBvHbXa3uRhu2Z6dJUb2922M9W+6vKfdrftTDp2kmvb/65nBj1Z870Hx+aX8r+mVG5/cLz46cGXxPT9xrn5g/S1JZNb2z9uv7QeSZufyjIWidysinDx04MHPPdHnOZfJBEVlpvjXPyUjwnzlXvNbEvJHzjigXId06QEprEidDvdO3AoAsklJrmkCv7eIbpVKnfQSwuQ66lHHybk/zozl/DGswECDiDnGoDyXP911vxQ242Bidw78sVPf52LcNvG/MufEY/xhHIdrBflBbvf5pf4rVeFaaxQznR4pUU9a71O0fpEV25LcfVK5d8r856m9U89uTb24/6Pl79v7ISqdUEOLZDDflP+sPxu3XWcASJ4Y/Jyjy4jODlbsr/8iZRPoXm5EdnlK9UkIXgPZ4zUch26G1epDIeEjadcOODkyJ44eh5UcglmRuuZRj6BzsuNQ/fQhfwHo7yc+1eTgDTlcrXQ/XOjJpUjyfv8UZfKYXyQCkhLJrcO3TtX1hK5j9Cdc2UrkaNMILwwksjhfc4LRAuW64TumzsdUG4VumvurEC5qHOvM0+g3FforrnzAMq9he6aOztQLvL85JsWKIf7BT8IVVCO8guDJ1JIrhu6Zxj0ALkkdMcwSAC56McE36wBuciH4WdqgNxN37kbyJuvM+dLuX3ojmGwB+Ru+m3ZDt0xDLqA3E1nKLedW0b/CaVSmYJy+OtDvHMA5UiWaPhlAsr9F7pr7gxBuYhnVTMGoNxz6K65Mwbl6NZReGMLyh1Dd82dGSh3A8llAsoxwiUwfrhKUHJyuIt/A9CUyBEujfLDQiIX/UzIk0Qu+tflUSLXjnxEl3YlcrGPCw5MJhf5DN1AKtcP3T033qVycecoaSKVu+lVe3GvbHtWyM1Dd9CF/A5Sbo1zxPPirbwLJ/cauov21JVyEU/Scfua+U0T0Q57NpwKL/cUupO2PGnIdSMdjlf5bViCXViD0N2045U3EciR7uYhg9/JI975GOVi4KFARCRXi/DWCXbPARtyI7x1/OY5SC6+W5cK6zOIN8FHN90j3uIvlqPcfUmBIMbBcrGlKUAVLj9VNYjhs0qpHOWGanRSqMwRWMkmou8N+a8LarleNJ+KDmBtMbjA0mMk+44bYO0tWWmsSN6YknqFsqJmBEVZ8FlKBGRyBOV00GnJqu1Ja+09Fn4Zn+SBU8mxz9CdVyGvMamob1nwaAdGOC25Yg/tForOq+S6BU4yd9LKoBpyuEX3UDkoK+aqqwEjlktEZaqupaxRxxmt0CUqVWkQ0JZjxwKGuz/KOseacgW0E1c7tZJjx4KNEPTcdKveF8tO0037vIIi2em66R/GsCqMnbabwUkTRbHTdzM5I+S+EO9MrRhgLodVktuJqskRFkZH1zwGz8SkpdLd5Fgn8BKclsbxDtZyGEX+HZAX8HeWY8kmnNvG9MAoUznWJSsKq2JnfNaWsRzrLcK4jVTjbgy5QDvRgPLo6HLsw/v8VsqvfaKSYyvPyUpD/3AvdznPyQp0zAiRHM7RLJq0jNISBDm29/ZBs2l9XJ+1nPtpS5os7Y+StJdjPS97Y7jK037kfGy3U57lRSfH+sSj84boiAVfcuxIdLTCGdsQgCTH1oTzJNYhAEuOcAwkO93NkxzrEtXiGLqfJuwuRzS37BICMjDkCEYJdqOAPChy6KMEy1FAHhw5NkcNCbLTAE1AkmMdxM9id44Hd/+AJccStOpME7Rj5dHkWA9pyYrDKCAPnhxSSMAIARmYcgghAScEZKDKOYcEpBCQgSvH5k7zQFghIANZzmmm5M5sDkcNthxrW1eXn5jOcyhBl7OeSxiazwWowJezDAncDnYEKOQsQgJuCMggkTNe+CA62hkBGjnDUQJ2CMggkjOaS3D+EARBJWfw4ch+LkAFmZz2XAJ+ePuBTo71tCr3EYS3HwjltAIe5giHg1ROPVOi2NLhCK2cYqYkdZvnUEIsJw3nRKH7F2o5STinCt2/kMuxNTB+bWF9wIOhl2N74SwX+shUgAc5lggWPtClJRf4kBOMzgnTkgu8yLFebuOy+epCK/zI5VIxypTrEk9yVwW3vnxd05vc7ypNm5WTdviTy8ohOC2bMcOjHNump3RSUkoBHZ9y7L2RynetI+NVjt3rbzLCwK+cZ0q5WCnlYqWUi5VSLlZKuVgp5WKllIuVUi5WSrlYuWm5/wH+7JPw+jQfogAAAABJRU5ErkJggg==" height="50px">`
+                    coracao++;
+                }
+                else {
+                    imagem.innerHTML += `<img src="https://www.woodaholic.com.br/arquivos/PRODUTOS/3261613490671558961/1366_G_Baralho--Carta-Rei.jpg" height="50px">`;
+                    carta++;
+                }
+        }
+
+        if (coracao > carta) {
+            resultado.innerHTML = 'Você tem mais sorte no amor'
+        }
+        else {
+            resultado.innerHTML = 'Você tem mais sorte no jogo'
+        }
+    }
+
+</script>
+
+<!-- 
+20. Existe um dito popular que diz que se você tem sorte no amor tem azar no jogo e vice-versa. Assim, crie um programa o qual:
+
+a) Tenha um botão "Ver minha sorte".
+
+b) Ao ser clicado, ele exibe 21 imagens, uma ao lado da outra. Essas imagens só podem ser ou de um coraçãozinho ou de uma carta de baralho (deixe todas na mesma altura para ficar mais bonito na tela)
+
+A distribuição das imagens é aleatória. Ao final serão 21 imagens, entre corações e cartas, isso que importa
+
+c) Abaixo de todas a imagens, devem aparecer uma dessas mensagens:
+
+   "Você tem mais sorte no amor" caso tenham sido sorteados mais corações
+   "Você tem mais sorte no jogo" caso tenham sido sorteados mais cartas de baralho
+ -->

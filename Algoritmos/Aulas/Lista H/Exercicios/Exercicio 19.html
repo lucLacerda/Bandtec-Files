@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 19 </title>
+</head>
+<body>
+
+    Qual a sua idade? 
+        <input type="number" id="ipt_idade" placeholder="Idade" onkeyup="infancia()">
+            <br>
+
+    <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    function infancia() {
+        var idade = ipt_idade.value;
+
+        resultado.innerHTML = '';
+
+        for (var cont = 0; cont <= idade; cont++) {
+            if (cont <= 4) {
+                resultado.innerHTML += `${cont} anos (Primeira Infância) <br>`
+            }
+            else if (cont <= 6) {
+                resultado.innerHTML += `${cont} anos (Pré-escolar) <br>`
+            }
+            else if (cont <= 10) {
+                resultado.innerHTML += `${cont} anos (Segunda Infância) <br>`
+            }
+            else if (cont <= 18) {
+                resultado.innerHTML += `${cont} anos (Adolescência) <br>`
+            }
+            else if (cont <= 50) {
+                resultado.innerHTML += `${cont} anos (Adulto) <br>`
+            }
+            else if (cont <= 100) {
+                resultado.innerHTML += `${cont} anos (Melhor idade) <br>`
+            }
+            else {
+                resultado.innerHTML += `${cont} anos (Matusalém) <br>`
+            }
+        }
+    }
+</script>
+
+<!-- 
+19. Crie um programa que vá contando a idade do usuário e descrevendo sua fase na vida, considerando que:
+
+- Primeira Infância: 0 a 4 anos
+
+- Pré-escolar: + de 4 aos 6 anos
+
+- Segunda Infância: + de 6 aos 10 anos
+
+- Adolescência: + de 10 aos 18 anos
+
+- Adulto: + de 18 até os 50 anos
+
+- Melhor idade: + de 50 anos até 100 anos
+
+- Matusalém: + de 100 anos
+
+Assim, sua página HTML deve solicitar a idade do usuário. Na medida que for digitando, deve aparecer uma contagem de idade e indicação de fase da vida abaixo como neste exemplo:
+
+   0 anos (Primeira Infância)
+
+   1 anos (Primeira Infância)
+
+   2 anos (Primeira Infância)
+
+   3 anos (Primeira Infância)
+
+   4 anos (Primeira Infância)
+
+   5 anos (Pré-escolar)
+
+   6 anos (Pré-escolar)
+
+   7 anos (Segunda Infância)
+
+   ....
+
+A última linha deve ser a idade informada. 
+-->

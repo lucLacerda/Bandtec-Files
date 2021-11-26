@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercício 16 </title>
+</head>
+<body>
+
+    Quantos depósitos você fez?
+        <input id="ipt_deposito" type="number" >
+            <br>
+    Informe o valor de cada depósito:
+        <input id="ipt_valor" type="number">
+            <br>
+    <button onclick="banco()">Acompanhar grana</button>
+            <br><br>
+
+        <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    function banco() {
+        var depositos = ipt_deposito.value;
+        var valor = ipt_valor.value;
+
+        var total = 0;
+        var bonus = 0;
+
+        resultado.innerHTML = '';
+
+        for (var cont = 1; cont <= depositos; cont++) {
+            total += valor
+
+            if (cont % 3 == 0) {
+                total += total *0.01
+                resultado.innerHTML += `${cont}º Mês: R$ ${total.toFixed(2)} 
+                <img src="https://gartic.com.br/imgs/mural/ht/hteira/estrela.png" style="height: 11px;"> <br>`;
+            }
+            else {
+                resultado.innerHTML += `${cont}º Mês: R$ ${total.toFixed(2)} <br>`;
+            }
+        }
+
+        resultado.innerHTML += `Total guardado: R$ ${total.toFixed(2)}`
+
+    }
+</script>
+
+<!-- 
+    16.   Refaça o programa anterior de tal forma de que, somente nos meses que ganhou o "bônus", apareça uma imagem de uma estrela bem pequena (reduza a imagem para ficar quase do tamanho da fonte) à direita do valor acumulado. 
+-->
