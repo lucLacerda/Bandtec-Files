@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="Pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 10 </title>
+</head>
+<body>
+    <h2> Desafio - </h2>
+
+    Informe a linha dos onibus:
+        <input type="text" id="ipt_bus" placeholder="Apenas 1 por vez">
+            <button onclick="gravar()"> Gravar buzão </button>
+                <br><br>
+    Informe qual ônibus quer se lembrar:
+        <input oninput="lembrar()" type="text" id="ipt_pesquisa" placeholder="Apenas 1 por vez">
+            <br><br>
+        <span id="resultado"></span>
+</body>
+</html>
+<script>
+    var busao = [];y
+
+    function gravar() {
+        busao.push(ipt_bus.value);
+        ipt_bus.value = ``; 
+        resultado.innerHTML = ``;
+        
+        for (var cont = busao.length -1; cont >= 0; cont--) {
+            resultado.innerHTML += `${busao[cont]} <br>`;
+
+        }
+    }
+    
+    function lembrar (){
+        resultado.innerHTML = ''
+        var cont = 1
+        if (busao.indexOf(ipt_pesquisa.value) == -1) {
+            
+            resultado.innerHTML += `Você nunca pegou a linha ${ipt_pesquisa.value} <br>`
+
+        } else {
+
+            var pesquisa = ""
+
+            for (var index = 0; index <= busao.length -1 ; index ++) {
+                if (ipt_pesquisa.value == busao[index]){
+                    pesquisa += `${index + 1}, `;
+
+                    resultado.innerHTML = `Você já pegou o onibus ${cont ++} vezes, na ordem: ${pesquisa}`
+                }
+
+            }
+            
+        }
+    }
+</script>
+
+<!-- 
+    10 (desafio). Crie um programa no qual o usuário vá registrando os nomes das linhas de ônibus que ele acaba de pegar. Ele digita e clica em "Gravar buzão" e vai atualizando os nomes te todas as linhas abaixo.
+
+Abaixo deve haver outro campo onde ele pesquisa por uma linha que já tenha pego. Ao clicar em "Pesquisar", ele deve ver uma dessas frases, abaixo da lista de linhas de ônibus que já pegou:
+
+   Você nunca pegou essa linha (caso não tenha cadastrado ela mesmo)
+
+   OU
+
+   Você já pegou essa linha 4 vezes, nessa ordem: 2, 4, 8, 9
+
+   (supondo que ele cadastrou a mesma linha na 2ª vez, na 4ª vez, na 8ª vez e na 9ª vez)
+ -->

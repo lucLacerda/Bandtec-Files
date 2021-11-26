@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 06 </title>
+</head>
+<body>
+    
+    <h2> AdoroCinema </h2>
+
+    Informe seus filmes favoritos:
+        <input type="text" id="ipt_filme" placeholder="Apenas 1 por vez">
+            <button onclick="cadastrar()"> Cadastrar filme </button>
+                <br><br>
+
+        <span id="resultado"></span>
+
+</body>
+</html>
+<script>
+    var filmes = [];
+
+    function cadastrar() {
+        filmes.push(ipt_filme.value);
+        ipt_filme.value = ``; 
+
+        resultado.innerHTML = ``;
+        
+        for (var cont = 0; cont < filmes.length; cont++) {
+            resultado.innerHTML += `${filmes[cont]} <br>`;
+            
+        }
+
+    }
+</script>
+
+<!-- 
+    6. Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar".
+Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.
+
+OBS. Tem que usar um vetor para guardar e mostrar os filmes. #ficaadica – Use uma estrutura de repetição (for/while) para mostrar os filmes na página.
+ -->
