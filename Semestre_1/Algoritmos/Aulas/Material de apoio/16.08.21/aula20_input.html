@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+
+<body>
+    <!--
+        A tag input cria um campo para entrada de dados
+        Vamos SEMPRE usar o type="text" (ou omitir este atributo)
+        Vamos SEMPRE usar o atributo id
+        
+        O atributo placeholder cria um texto temporário dentro do próprio campo
+        O campo com atributo autofocus terá o cursor nele quando a pagina for carregad
+    
+        Regras para valor de id: 
+        1. todas as letras devem ser minúsculas
+        2. não começar com número 
+        3. pode ter número no meio ou fim
+        4. a cada "palavra", usar "_" (underline)
+        ex: telefone_comercial, quantidade_filhos
+        5. NÃO pode ter espaço em branco
+        6. NÃO usar nomes de tags (body, h3, img, div etc)
+        7. NÃO usar caracteres especiais (acentos, cedilha, etc)
+    -->
+
+    Entre com o seu <b> primeiro nome: </b>
+    <input id="primeiro" type="text" placeholder="primeiro nome">
+    <br>
+    Entre com o seu <b> último nome: </b>
+    <input id="ultimo" type="text" placeholder="Último Nome">
+    <br>
+    <button onclick="incluir()" style="background: red; color: green;">Incluir</button>
+    <br>
+    <div id="div_mens">
+        <h3>Mini Cadastro de Nome</h3>
+        Seu nome é: <br>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function incluir() {
+        // usando o id de uma tag de input e depois o .value recuperamos o valor que foi digitado nela
+
+        // Aqui usamos a Concatenação
+        // Inicializamos e Finalizamos o texto com aspas simples ou duplas
+        // a concatenação é feita com o simbolo "+" (sinal de mais)
+
+        
+        // alert ("seu nome é: " + primeiro.value + ' ' + ultimo.value);
+
+        div_mens.innerHTML += primeiro.value + ' ' + ultimo.value + "<br>";
+
+        /*  Podemos limpar os campos de entrada simplesmente atribuindo '' para eles,
+            ou seja, basta informar o campo de entrada, seguido de .value e do sinal = 
+            (atribuição) e um par de aspas (simples ou duplas).
+        */
+        primeiro.value = '';
+        ultimo.value = '';
+    }
+
+</script>

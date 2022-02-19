@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exercicio 7 B </title>
+</head>
+<body>
+
+    Nome do Aluno <input id="primeiro_ipt" type="text" placeholder="Ex: Lucas">
+    <br>
+    Quantidade de Aulas <input id="segundo_ipt" type="number" placeholder="Aulas">
+    <br>
+    Quantidade de Faltas <input id="terceiro_ipt" type="number" placeholder="Faltas">
+
+    <button onclick="calcular()" style="background: green; color: white;"> <b> Calcular Frequencia </b> </button>
+
+    <div id="caixa"></div>
+
+    <div id="bar" style="background-color: red; height: 20px; display: none";><div id="bar2" style="background-color: green; width: 0px; height: 20px"></div></div>
+
+    
+
+</body>    
+    <script>
+        function calcular() {
+            var nome_aluno = primeiro_ipt.value
+            var conta01 = `${Number(terceiro_ipt.value) / (segundo_ipt.value)}`;
+            var conta02 = `${(conta01) * 100}`;
+            var conta03 = `${100 - (conta02)}`;
+            caixa.innerHTML += `<span style="color: darkblue;"> Olá, ${nome_aluno}! Sua frequência foi de </span>
+                                <b style="color: green;"> ${Number(conta03).toFixed(2)}% </b><br>`;
+
+                primeiro_ipt.value = '';
+                segundo_ipt.value = '';
+                terceiro_ipt.value = '';
+
+            bar.style.display = 'block';
+            bar2.style.width = `${conta03}%`;
+
+        }    
+                        
+    </script>
+    
+</html>
