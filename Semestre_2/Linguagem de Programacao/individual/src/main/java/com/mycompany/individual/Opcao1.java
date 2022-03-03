@@ -18,6 +18,7 @@ public class Opcao1 {
         System.out.println("2 - Não ");
 
         Double temJuros = leitor.nextDouble();
+        Double valorJuros = 1.0;
 
         if (temJuros == 1) {
             System.out.println("A partir de qual parcela?");
@@ -25,13 +26,13 @@ public class Opcao1 {
 
             if (parcelas >= parcelaJuros) {
                 System.out.println("De quantos % ?");
-                Double valorJuros = leitor.nextDouble();
+                valorJuros = leitor.nextDouble() / 100;
             }
         } else {
             System.out.println("Opa, que maravilha");
         }
         System.out.println("Calculando...\n");
-        Double calculo = precoTotal / parcelas;
+        Double calculo = precoTotal * valorJuros / parcelas;
         System.out.println("Analisando...\n");
         System.out.println("Finalizando...\n");
 

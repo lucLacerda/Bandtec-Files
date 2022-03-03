@@ -17,7 +17,7 @@ public class ProjetoIndividual {
         do {
             System.out.println("Digite o número correspodente a opção");
             opcaoDigitada = leitor.nextInt();
-            
+
             switch (opcaoDigitada) {
                 case 1:
                     System.out.println("Você selecionou a opção A Prazo\n"
@@ -31,8 +31,12 @@ public class ProjetoIndividual {
                             + "Vamos lá: ");
                     Opcao2 funcao2 = new Opcao2();
                     funcao2.CustoBeneficio();
+                    break; 
+                    
+                case 3: 
+                    System.out.println("Ainda em análise");
                     break;
-
+                    
                 case 4:
                     System.out.println("Foi um prazer tê-lo conosco, volte logo!");
                     break;

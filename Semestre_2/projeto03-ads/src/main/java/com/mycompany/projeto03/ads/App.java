@@ -1,6 +1,7 @@
 package com.mycompany.projeto03.ads;
 
 import com.mycompany.projeto03.ads.Utilitaria;
+import java.util.Scanner;
 
 public class App {
 
@@ -8,12 +9,17 @@ public class App {
 
         Utilitaria util = new Utilitaria();
 
-        System.out.println("Diego");
-        util.exibirLinha();
-        System.out.println("&".repeat(15));
+        Scanner leitorNota = new Scanner (System.in);
+        
+        System.out.println("Digite sua primeira nota: ");
+        Double nota1 = leitorNota.nextDouble();
+        
+        System.out.println("Digite sua primeira nota: ");
+        Double nota2 = leitorNota.nextDouble();
 
-        System.out.println("Lucas");
-        System.out.println("0".repeat(15));
+        
 
+    }
+        
     }
 }

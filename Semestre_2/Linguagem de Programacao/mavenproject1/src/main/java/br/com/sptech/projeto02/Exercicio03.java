@@ -3,10 +3,11 @@ package br.com.sptech.projeto02;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Lucas Lacerda
- */
+/*
+ 
+@author Lucas Lacerda
+
+*/
 public class Exercicio03 {
     public static void main(String[] args) {
         Scanner leitorUser = new Scanner (System.in);
