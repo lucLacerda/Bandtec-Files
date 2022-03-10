@@ -12,38 +12,26 @@ public class Opcao2 {
         Integer memoria = Memoria();
         Integer custo = Custo();
 
-        if (custo > 3000) {
-            if (armazenamento == 256) {
-                if (memoria == 8) {
-                    System.out.println("Custo Beneficio está ok");
-                } else {
-                    System.out.println("Não ta compensando não");
-                }
+        if (custo <= 3800 && custo > 1500) {
+            if (armazenamento == 128  || armazenamento == 256 && memoria == 8 || memoria == 6) {
+                System.out.println("Custo Beneficio está ok");
             } else {
                 System.out.println("Não ta compensando não");
             }
-        } else if (custo <= 3000 && Custo() > 1500) {
-            if (armazenamento == 128 || armazenamento == 64) {
-                if (memoria == 6 || memoria == 4) {
-                    System.out.println("Custo Beneficio tá bão");
-                } else {
-                    System.out.println("Não ta compensando não");
-                }
+
+        } else if (custo <= 3000 && custo >= 1500) {
+            if (armazenamento == 256 || armazenamento == 128 || armazenamento == 64 && memoria == 8 || memoria == 6 || memoria == 4) {
+                System.out.println("Custo Beneficio tá bão");
             } else {
                 System.out.println("Não ta compensando não");
             }
-        } else if (custo <= 1500) {
-            if (armazenamento == 64 || armazenamento == 32) {
-                if (memoria == 4) {
-                    System.out.println("Custo Beneficio da pra melhorar");
-                } else {
-                    System.out.println("Não ta compensando não");
-                }
+        } else if (custo < 1500) {
+            if (armazenamento == 256 || armazenamento == 128 || armazenamento == 64 || armazenamento == 32 && memoria == 8 || memoria == 6 || memoria == 4) {
+                System.out.println("Custo Beneficio tá bão");
             } else {
                 System.out.println("Não ta compensando não");
             }
         }
-
     }
 
     String Marca() {
@@ -88,7 +76,7 @@ public class Opcao2 {
     }
 
     Integer Armazenamento() {
-        System.out.println("Quanto ele tem de armazenamento interno?");
+        System.out.println("\nQuanto ele tem de armazenamento interno?");
         System.out.println("1 - 256Gb");
         System.out.println("2 - 128Gb");
         System.out.println("3 - 64Gb");
@@ -129,7 +117,7 @@ public class Opcao2 {
     }
 
     Integer Memoria() {
-        System.out.println("Quanto ele tem de Memoria RAM?");
+        System.out.println("\nQuanto ele tem de Memoria RAM?");
         System.out.println("1 - 8Gb");
         System.out.println("2 - 6Gb");
         System.out.println("3 - 4Gb");
@@ -165,7 +153,7 @@ public class Opcao2 {
     }
 
     Integer Custo() {
-        System.out.println("Quanto ele custa atualmente? (Arredonde os centavos)");
+        System.out.println("\nQuanto ele custa atualmente? (Arredonde os centavos)");
         Integer custoCelular = leitor.nextInt();
 
         return custoCelular;
