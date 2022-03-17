@@ -34,16 +34,18 @@ public class VendaLivro {
             switch (opcaoDigitada) {
                 case 1:
                     if (quantidadeEstoque == 0) {
-                        System.out.println("Operação inválida - Não existem tarefas pendentes!");
+                        System.out.println("Operação inválida - Não existem "
+                                + "tarefas pendentes!");
                         break;
-                        
+
                     } else {
-                        System.out.println("\nDigite a quantidade de livros escolhida: ");
+                        System.out.println("\nDigite a quantidade de livros "
+                                + "escolhida: ");
                         Integer quantidadeVenda = leitor.nextInt();
 
                         while (quantidadeVenda > quantidadeEstoque) {
-                            System.out.println("\nInfelizmente você não possui exemplares "
-                                    + "suficientes para a venda");
+                            System.out.println("\nInfelizmente você não possui"
+                                    + " exemplares suficientes para a venda");
                             System.out.println(
                                     String.format("Quantidade disponivel: %d", quantidadeEstoque));
                             System.out.println("\nDigite uma quantidade válida:");
