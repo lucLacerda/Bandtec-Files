@@ -1,11 +1,10 @@
-package com.mycompany.lucas.lacerda.c2;
-// Autor: Lucas Lacerda
-public class Plano {
+package com.c2.gustavo.moraes.c2;
 
-    Integer id;
-    String nomePlano;
-    Integer quantidadeDisponivel;
-    Double valorVenda;
+public class Plano {
+    private Integer id;
+    private String nomePlano;
+    private Integer quantidadeDisponivel;
+    private Double valorVenda;
 
     public Plano(Integer id, String nomePlano) {
         this.id = id;
@@ -48,12 +47,14 @@ public class Plano {
 
     @Override
     public String toString() {
-        return String.format(""
-                + "\nID: %d"
-                + "\nNome: %s"
-                + "\nQuantidade disponível: %d"
-                + "\nValor: R$ %.2f",
-                id, nomePlano, quantidadeDisponivel, valorVenda);
+        return  
+               "\nID: " + id + 
+               "\nNome: " + nomePlano + 
+               "\nQuantidade disponível: " + quantidadeDisponivel + 
+               "\nValor: " + valorVenda;
     }
-
+    
+    
+    
+    
 }
