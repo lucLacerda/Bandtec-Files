@@ -11,7 +11,7 @@ public class ProjetoIndividual {
 
         do {
             System.out.println("\n1 - Calcule se parcelar vale a pena");
-            System.out.println("2 - Custo X Beneficio");    
+            System.out.println("2 - Custo X Beneficio");
             System.out.println("3 - Encerrar Programa");
             
             System.out.println("Digite o número correspodente a opção");
