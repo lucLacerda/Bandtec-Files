@@ -1,3 +1,5 @@
+import java.lang.annotation.Repeatable;
+
 public class AppTax {
     public static void main(String[] args) {
         Aliment aliment = new Aliment(558, "bananão", 10.0, 2);
@@ -10,13 +12,15 @@ public class AppTax {
         tax.addTaxation(perfume);
         tax.addTaxation(service);
 
-        System.out.println(tax.calculateTotalTax());
+        System.out.println("\n");
+        System.out.println("Imposto do alimento: " + aliment.getTax());
+        System.out.println("-".repeat(30));
+        System.out.println("Imposto do perfume: " + perfume.getTax());
+        System.out.println("-".repeat(30));
+        System.out.println("Imposto do serviço: " + service.getTax());
+        System.out.println("-".repeat(30));
+        System.out.println("Calculo do imposto total: " + tax.calculateTotalTax());
 
-        System.out.println(aliment.getTax());
-        System.out.println(perfume.getTax());
-        System.out.println(service.getTax());
-
-        System.out.println(aliment.getTax() + perfume.getTax() + service.getTax());
 
     }
 }
