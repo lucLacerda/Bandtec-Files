@@ -9,7 +9,6 @@ public class Investimento {
     private Double minimo;
     private Double jurosAnuais;
     private boolean aberto;
-
     public UUID getId() {
         return id;
     }
