@@ -8,9 +8,9 @@ public class Cantores {
     private String senha;
 
     private int id;
-        private String nome;
-        private String categoria;
-        private Integer cache;
+    private String nome;
+    private String categoria;
+    private Integer cache;
     private boolean constaNoSpotify;
 
     public String getSenha() {

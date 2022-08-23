@@ -1,0 +1,11 @@
+1 - Se quisermos obrigar que a classe que representa o Professor e a classe que representa o
+Coordenador implementem o método: getValorBonus(), qual seria a melhor forma: classe
+abstrata ou interface? Justifique:
+R: Eu usei como forma de implementação do getValorBonus() um Interface pois por ser algo pontual, que somente os funcionarios com bonus vão utilizar, e se algum dia outro tipo de funcionario for usar esse método ele poderá também
+
+2 - Implemente também a classe ControleBonus, que terá como atributo um ou mais List para
+conter todos os objetos que recebem bônus. Pergunta: é necessário ter 2 List ou apenas um?
+R: Apenas um List que limite as instancias do funcionario com Bonus, no meu caso, FuncionarioComBonus.
+
+3 - O polimorfismo está presente nesse sistema? Justifique.
+R: O próprio método getValorBonus() é um  exemplo de polimorfismo, uma vez que ele é reescrito com funcionalidades diferentes.
