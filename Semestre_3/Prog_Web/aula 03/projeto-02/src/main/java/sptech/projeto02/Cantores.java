@@ -6,7 +6,6 @@ public class Cantores {
 
     @JsonIgnore
     private String senha;
-
     private int id;
     private String nome;
     private String categoria;
