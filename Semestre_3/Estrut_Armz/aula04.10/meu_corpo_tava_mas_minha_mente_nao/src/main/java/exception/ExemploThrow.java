@@ -3,6 +3,12 @@ package exception;
 import java.util.Scanner;
 
 public class ExemploThrow {
+    String msg;
+
+    public ExemploThrow(String msg) {
+        this.msg = msg;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
