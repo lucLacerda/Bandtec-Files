@@ -43,7 +43,7 @@ function Musicas() {
                     {
                         musicas.map((musica, index) => {
                             return(
-                                <CardMusica key={index} 
+                                <CardMusica key={index}
                                 titulo={musica.titulo}
                                 artista={musica.artista}
                                 genero={musica.genero}
