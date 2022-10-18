@@ -1,0 +1,15 @@
+Configurações JPA
+# habilita a impressão dos comando SQL no log
+spring.jpa.show-sql=true
+
+# formata os SQL (quebra linha, identa etc)
+spring.jpa.properties.hibernate.format_sql=true
+
+# Habilitando o H2 Console. Num navegador, permite o acesso a http://localhost:8080/h2-console
+spring.h2.console.enabled=true
+
+# indica qual a URL de acesso ao banco. A palavra "animes" ao final é o nome do banco de dados
+spring.datasource.url=jdbc:h2:mem:animes
+
+# para banco de dados em disco, exemplos seriam comoos abaixo. "meubanco" seria o banco de dados criado. Siram criados 1 ou 2 arquivos com o nome "meubanco"
+spring.datasource.url=jdbc:h2:mem:c://usuarios//Aluno//Downloads//projetos//projetoXYZ//meubanco
