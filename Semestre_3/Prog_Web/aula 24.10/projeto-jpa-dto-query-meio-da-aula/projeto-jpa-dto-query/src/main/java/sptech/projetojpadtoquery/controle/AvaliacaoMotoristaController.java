@@ -8,11 +8,10 @@ import sptech.projetojpadtoquery.repositorio.AvaliacaoMotoristaRepository;
 import sptech.projetojpadtoquery.repositorio.MotoristaRepository;
 import sptech.projetojpadtoquery.repositorio.PassageiroRepository;
 import sptech.projetojpadtoquery.requisicao.NovaAvaliacaoRequest;
-import sptech.projetojpadtoquery.resposta.MotoristaSimplesResponse;
 import sptech.projetojpadtoquery.resposta.ResumoAvaliacoesMotoristaResponse;
 
 import javax.validation.Valid;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/avaliacoes/motoristas")
@@ -27,14 +26,20 @@ public class AvaliacaoMotoristaController {
     @Autowired
     private MotoristaRepository motoristaRepository;
 
-    @GetMapping("/{idMotorista}")
-    public ResponseEntity<List<ResumoAvaliacoesMotoristaResponse>> getMotoristaPorId(@PathVariable int idMotorista) {
-        return ResponseEntity.of(avaliacaoMotoristaRepository.getAvaliacaoPorIdMotorista(idMotorista));
-    }
-
     @GetMapping("/nota-media/{idMotorista}")
     public ResponseEntity<Double> getMediaAvaliacoes(@PathVariable int idMotorista) {
         return ResponseEntity.of(avaliacaoMotoristaRepository.getMediaAvaliacoes(idMotorista));
+    }
+
+    @GetMapping("/nota-media-recentes/{idMotorista}")
+    public ResponseEntity<Double> getMediaAvaliacoesRecentes(
+            @PathVariable int idMotorista) {
+
+        LocalDateTime ha6Meses = LocalDateTime.now().minusMonths(6);
+
+        return ResponseEntity.of(
+                avaliacaoMotoristaRepository
+                        .getMediaAvaliacoes(idMotorista, ha6Meses));
     }
 
     @GetMapping("/resumo/{idMotorista}")
@@ -43,7 +48,9 @@ public class AvaliacaoMotoristaController {
     }
 
     @PostMapping
-    public ResponseEntity<AvaliacaoMotorista> post(@RequestBody @Valid NovaAvaliacaoRequest novaAvaliacaoRequest) {
+    public ResponseEntity<AvaliacaoMotorista> post(
+            @RequestBody @Valid
+            NovaAvaliacaoRequest novaAvaliacaoRequest) {
 
         if (!passageiroRepository.existsById(novaAvaliacaoRequest.getIdPassageiro())) {
             return ResponseEntity.status(404).build();
