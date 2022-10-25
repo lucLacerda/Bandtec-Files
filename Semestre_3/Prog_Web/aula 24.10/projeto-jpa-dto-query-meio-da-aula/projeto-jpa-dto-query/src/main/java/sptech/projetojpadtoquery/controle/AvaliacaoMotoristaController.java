@@ -12,6 +12,7 @@ import sptech.projetojpadtoquery.resposta.ResumoAvaliacoesMotoristaResponse;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RestController
 @RequestMapping("/avaliacoes/motoristas")
@@ -29,6 +30,11 @@ public class AvaliacaoMotoristaController {
     @GetMapping("/nota-media/{idMotorista}")
     public ResponseEntity<Double> getMediaAvaliacoes(@PathVariable int idMotorista) {
         return ResponseEntity.of(avaliacaoMotoristaRepository.getMediaAvaliacoes(idMotorista));
+    }
+
+    @GetMapping("/{idMotorista}")
+    public ResponseEntity<List<ResumoAvaliacoesMotoristaResponse>> getAvaliacoesPorIdMotorista(@PathVariable int idMotorista) {
+        return ResponseEntity.of(avaliacaoMotoristaRepository.getAvaliacoesPorIdMotorista(idMotorista));
     }
 
     @GetMapping("/nota-media-recentes/{idMotorista}")

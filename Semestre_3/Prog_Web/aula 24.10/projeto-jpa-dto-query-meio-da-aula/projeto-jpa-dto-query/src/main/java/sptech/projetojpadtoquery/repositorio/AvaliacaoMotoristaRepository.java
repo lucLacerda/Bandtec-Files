@@ -40,6 +40,12 @@ Não é necessário usar aspas nos parâmetros
     " group by am.motorista.id")
     Optional<ResumoAvaliacoesMotoristaResponse> getResumoAvaliacoesMotorista(int idMotorista, LocalDateTime aPartirDe);
 
+    @Query("select new " +
+            " sptech.projetojpadtoquery.resposta.ResumoAvaliacoesMotoristaResponse(am.motorista.nome) " +
+            " from AvaliacaoMotorista am where am.motorista.id = ?1" +
+            " group by am.motorista.id")
+    Optional<List<ResumoAvaliacoesMotoristaResponse>> getAvaliacoesPorIdMotorista(int idMotorista);
+
     List<AvaliacaoMotorista> findByMotoristaId(int idMotorista);
 
     List<AvaliacaoMotorista> findByPassageiroId(int idMotorista);
