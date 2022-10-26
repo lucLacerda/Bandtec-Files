@@ -1,0 +1,7 @@
+00NOTA2022218-10-2022 21:06:4901
+02ADS  01212151Lucas Lacerda                                     Estrutura de Dados                      09,00001
+02ADS  01212152Jão                                               Prog Web                                08,00002
+02ADS  01212153Zé                                                Engenharia de Software                  07,00003
+02CCO  01212154Fe                                                Cálculo Computacional                   06,00004
+02REDES01212155Don                                               Segurança da Informação                 05,00005
+010000000005
