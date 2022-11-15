@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: FilaObjTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.04 s <<< FAILURE! - in FilaObjTest
+isEmptyQuandoFilaVazia  Time elapsed: 0.023 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at FilaObjTest.isEmptyQuandoFilaVazia(FilaObjTest.java:28)
+
+insertLancaIndexOutOfBoundsExceptionQuandoFilaCheia  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected java.lang.IndexOutOfBoundsException to be thrown, but nothing was thrown.
+	at FilaObjTest.insertLancaIndexOutOfBoundsExceptionQuandoFilaCheia(FilaObjTest.java:90)
+
+insertQuandoFilaRetornaDez  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <null>
+	at FilaObjTest.insertQuandoFilaRetornaDez(FilaObjTest.java:97)
+
+poolQuandoFilaRetornaVinte  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <null>
+	at FilaObjTest.poolQuandoFilaRetornaVinte(FilaObjTest.java:77)
+
+peekQuandoFilaRetornaDez  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <null>
+	at FilaObjTest.peekQuandoFilaRetornaDez(FilaObjTest.java:59)
+
+isFullTrueQuandoFilaPreenchida  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at FilaObjTest.isFullTrueQuandoFilaPreenchida(FilaObjTest.java:22)
+
+poolQuandoFilaRetornaDez  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10> but was: <null>
+	at FilaObjTest.poolQuandoFilaRetornaDez(FilaObjTest.java:68)
+
